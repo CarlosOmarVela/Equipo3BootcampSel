@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-07-31T02:58:30.535Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="YLKnXDFbXf5E2P5tjCZp" version="13.5.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-07-31T03:09:16.713Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36" etag="vbRxKxOx98T8szs0htWk" version="13.5.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="946" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -10,10 +10,10 @@
         <mxCell id="rTpgb17cgvH1JY2G172Z-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="80" width="820" height="820" as="geometry" />
         </mxCell>
-        <mxCell id="rTpgb17cgvH1JY2G172Z-2" value="Collapse hamburguer menu" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="rTpgb17cgvH1JY2G172Z-2" value="Collapse hamburguer menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="320" y="130" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rTpgb17cgvH1JY2G172Z-3" value="Search video" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="rTpgb17cgvH1JY2G172Z-3" value="Search video" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="320" y="340" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rTpgb17cgvH1JY2G172Z-4" value="Youtube home" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -31,7 +31,7 @@
         <mxCell id="rTpgb17cgvH1JY2G172Z-15" value="Settings" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="320" y="680" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="rTpgb17cgvH1JY2G172Z-16" value="Sign in" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="rTpgb17cgvH1JY2G172Z-16" value="Sign in" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="320" y="790" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rTpgb17cgvH1JY2G172Z-17" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="rTpgb17cgvH1JY2G172Z-2" edge="1">
@@ -46,7 +46,7 @@
             <mxPoint x="330" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rTpgb17cgvH1JY2G172Z-19" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.002;exitY=0.468;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="rTpgb17cgvH1JY2G172Z-3" edge="1" source="rTpgb17cgvH1JY2G172Z-1">
+        <mxCell id="rTpgb17cgvH1JY2G172Z-19" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.002;exitY=0.468;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTpgb17cgvH1JY2G172Z-1" target="rTpgb17cgvH1JY2G172Z-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="170" y="350" as="sourcePoint" />
             <mxPoint x="340" y="190" as="targetPoint" />
