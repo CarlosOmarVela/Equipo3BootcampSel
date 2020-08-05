@@ -9,8 +9,6 @@ import utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.awt.print.PrinterIOException;
 import java.util.concurrent.TimeUnit;
 
 public class LeftMenu {
