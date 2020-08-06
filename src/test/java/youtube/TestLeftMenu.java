@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
-public class LeftMenu {
+public class TestLeftMenu {
     private WebDriver driver;
     private String webBrowser = "chrome";
     private String baseURL = "https://www.youtube.com/";

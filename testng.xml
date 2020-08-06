@@ -3,7 +3,7 @@
 <suite name="Qa Minds Youtube">
     <test verbose="2" preserve-order="true" name="Youtube - Left Menu">
         <classes>
-            <class name="youtube.LeftMenu">
+            <class name="youtube.TestLeftMenu">
                 <methods>
                     <include name="pageTitle"/>
                     <include name="leftMenuHome"/>

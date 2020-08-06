@@ -1,6 +1,6 @@
 package youtube;
 
-public class Header {
+public class TestHeader {
     public static void main(String[] args) {
 
     }
