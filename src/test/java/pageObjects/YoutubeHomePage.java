@@ -20,6 +20,13 @@ public class YoutubeHomePage {
         driver.findElement(By.xpath("//a[@title='Home']")).click();
     }
 
+    public String getCurrentURL(){
+        String currentURL = driver.getCurrentUrl();
+        return currentURL;
+    }
+
+
+
 
 
 }
