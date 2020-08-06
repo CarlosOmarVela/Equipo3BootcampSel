@@ -18,7 +18,7 @@ public class TestLeftMenu {
     private String baseURL = "https://www.youtube.com/";
     private YoutubeHomePage objects;
 
-    @BeforeTest
+    @BeforeTest // methods under this annotation will be executed prior to the first test case in the TestNG file.
     public void beforeTest(){
         // Init chrome driver
         driver = WebDriverFactory.getDriver(webBrowser);
@@ -74,7 +74,7 @@ public class TestLeftMenu {
         Assert.assertEquals(history.getAttribute("title"),"History");
     }
 
-    @AfterTest
+    @AfterTest // methods under this annotation will be executed after all test cases in the TestNG file are executed.
     public void afterTest(){
         if(webBrowser.toLowerCase().equals("chrome")){
             driver.close();
