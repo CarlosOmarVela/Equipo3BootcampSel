@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class YoutubeHomePage {
@@ -13,6 +14,10 @@ public class YoutubeHomePage {
     public String getYoutubeHomePageTitle(){
         String title = driver.getTitle();
         return title;
+    }
+
+    public void goToHomePage(){
+        driver.findElement(By.xpath("//a[@title='Home']")).click();
     }
 
 
