@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import pageObjects.YoutubeHomePage;
 import utils.WebDriverFactory;
@@ -39,9 +40,11 @@ public class TestLeftMenu {
         this.objects = new YoutubeHomePage(driver);
     }
 
-    @Test
-    public void pageTitle(){
-        Assert.assertEquals(objects.getYoutubeHomePageTitle(), "YouTube");
+    @BeforeMethod // methods under this annotation will be executed prior to each method in each test case.
+    public void verifyHomePageTitle(){
+        String expectedTitle = "YouTube";
+        String actualTitle = objects.getYoutubeHomePageTitle();
+        Assert.assertEquals(actualTitle,expectedTitle);
     }
 
     @Test
