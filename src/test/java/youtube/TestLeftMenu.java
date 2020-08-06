@@ -52,8 +52,10 @@ public class TestLeftMenu {
 
     @Test
     public void leftMenuHome(){
-        WebElement home = driver.findElement(By.xpath("//a[@title='Home']"));
-        Assert.assertEquals(home.getAttribute("title"),"Home");
+        String expectedURL = "https://www.youtube.com/";
+        objects.goToHomePage();
+        String currentURL = objects.getCurrentURL();
+        Assert.assertEquals(currentURL,expectedURL);
     }
 
     @Test
