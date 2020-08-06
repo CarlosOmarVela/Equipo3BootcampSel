@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pageObjects.YoutubeHomePage;
 import utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,26 +14,34 @@ import java.util.concurrent.TimeUnit;
 
 public class LeftMenu {
     private WebDriver driver;
+    private String webBrowser = "chrome";
     private String baseURL = "https://www.youtube.com/";
+    private YoutubeHomePage objects;
 
     @BeforeTest
     public void beforeTest(){
         // Init chrome driver
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver(webBrowser);
 
         // used to set the default waiting time throughout the program
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        // used to set the default page load time
+        driver.manage().timeouts().pageLoadTimeout(5,TimeUnit.SECONDS);
 
         // used to set the waiting time for a particular instance only
         WebDriverWait wait = new WebDriverWait(driver,10);
 
         // open web page
         driver.get(baseURL);
+
+        // Initialize youtube home page objects before the other tests
+        this.objects = new YoutubeHomePage(driver);
     }
 
     @Test
     public void pageTitle(){
-        Assert.assertEquals(driver.getTitle(), "YouTube");
+        Assert.assertEquals(objects.getYoutubeHomePageTitle(), "YouTube");
     }
 
     @Test
@@ -67,7 +76,11 @@ public class LeftMenu {
 
     @AfterTest
     public void afterTest(){
-        driver.close();
-        driver.quit();
+        if(webBrowser.toLowerCase().equals("chrome")){
+            driver.close();
+            driver.quit();
+        } else if (webBrowser.toLowerCase().equals("firefox")){
+            driver.close();
+        }
     }
 }
