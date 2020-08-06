@@ -22,15 +22,6 @@ public class TestLeftMenu {
         // Init chrome driver
         driver = WebDriverFactory.getDriver(webBrowser);
 
-        // used to set the default waiting time throughout the program
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        // used to set the default page load time
-        driver.manage().timeouts().pageLoadTimeout(5,TimeUnit.SECONDS);
-
-        // used to set the waiting time for a particular instance only
-        WebDriverWait wait = new WebDriverWait(driver,10);
-
         // open web page
         driver.get(baseURL);
 
@@ -60,8 +51,11 @@ public class TestLeftMenu {
 
     @Test
     public void leftMenuTrending(){
-        WebElement trending = driver.findElement(By.xpath("//a[@title='Trending']"));
-        Assert.assertEquals(trending.getAttribute("title"),"Trending");
+        String expectedURL = "https://www.youtube.com/feed/trending";
+        objects.goToTrendingPage();
+        String currentURL = objects.getCurrentURL();
+        Assert.assertEquals(currentURL,expectedURL);
+
     }
 
     @Test
