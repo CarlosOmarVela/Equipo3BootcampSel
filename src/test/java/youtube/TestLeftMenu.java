@@ -2,14 +2,11 @@ package youtube;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import pageObjects.YoutubeHomePage;
 import utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
-import java.util.concurrent.TimeUnit;
 
 public class TestLeftMenu {
     private WebDriver driver;
@@ -32,24 +29,24 @@ public class TestLeftMenu {
     @BeforeMethod // methods under this annotation will be executed prior to each method in each test case.
     public void verifyHomePageTitle(){
         String expectedTitle = "YouTube";
-        String actualTitle = objects.getYoutubeHomePageTitle();
+        String actualTitle = objects.getCurrentPageTitle();
         Assert.assertEquals(actualTitle,expectedTitle);
     }
 
     @AfterMethod // methods under this annotation will be executed after each method in each test case.
     public void goBackToHomePage(){
-        objects.goToHomePage();
+        objects.goToLeftMenuHomePage();
     }
 
     @Test
     public void leftMenuHome(){
-        objects.goToHomePage();
+        objects.goToLeftMenuHomePage();
         Assert.assertEquals(objects.getCurrentURL(),"https://www.youtube.com/");
     }
 
     @Test
     public void leftMenuTrending(){
-        objects.goToTrendingPage();
+        objects.goToLeftMenuTrendingPage();
         Assert.assertEquals(objects.getCurrentURL(),"https://www.youtube.com/feed/trending");
 
     }
