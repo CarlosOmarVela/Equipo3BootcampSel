@@ -43,18 +43,14 @@ public class TestLeftMenu {
 
     @Test
     public void leftMenuHome(){
-        String expectedURL = "https://www.youtube.com/";
         objects.goToHomePage();
-        String currentURL = objects.getCurrentURL();
-        Assert.assertEquals(currentURL,expectedURL);
+        Assert.assertEquals(objects.getCurrentURL(),"https://www.youtube.com/");
     }
 
     @Test
     public void leftMenuTrending(){
-        String expectedURL = "https://www.youtube.com/feed/trending";
         objects.goToTrendingPage();
-        String currentURL = objects.getCurrentURL();
-        Assert.assertEquals(currentURL,expectedURL);
+        Assert.assertEquals(objects.getCurrentURL(),"https://www.youtube.com/feed/trending");
 
     }
 
