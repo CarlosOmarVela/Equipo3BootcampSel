@@ -18,6 +18,7 @@ public class WebDriverFactory {
             options.addArguments("start-maximized");
             options.addArguments("--disable-notifications");
             options.addArguments("--lang=en");
+            options.addArguments("--lang=en-US");
 
             //Download & Setup WebDriver binary for Chrome
             WebDriverManager.chromedriver().setup();
