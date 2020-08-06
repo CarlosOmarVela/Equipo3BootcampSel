@@ -3,14 +3,12 @@ package youtube;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pageObjects.YoutubeHomePage;
 import utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 public class TestLeftMenu {
@@ -45,6 +43,11 @@ public class TestLeftMenu {
         String expectedTitle = "YouTube";
         String actualTitle = objects.getYoutubeHomePageTitle();
         Assert.assertEquals(actualTitle,expectedTitle);
+    }
+
+    @AfterMethod // methods under this annotation will be executed after each method in each test case.
+    public void goBackToHomePage(){
+        objects.goToHomePage();
     }
 
     @Test
