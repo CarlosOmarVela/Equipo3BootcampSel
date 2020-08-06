@@ -3,7 +3,6 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +25,7 @@ public class YoutubeHomePage {
         this.wait = new WebDriverWait(driver,10);
     }
 
-    public String getYoutubeHomePageTitle(){
+    public String getCurrentPageTitle(){
         String title = driver.getTitle();
         return title;
     }
@@ -36,16 +35,22 @@ public class YoutubeHomePage {
         return currentURL;
     }
 
-    public void goToHomePage(){
+    public void goToLeftMenuHomePage(){
         WebElement home = driver.findElement(By.xpath("//a[@title='Home']"));
         home.click();
         wait.until(ExpectedConditions.titleContains("YouTube"));
     }
 
-    public void goToTrendingPage(){
+    public void goToLeftMenuTrendingPage(){
         WebElement trending = driver.findElement(By.xpath("//a[@title='Trending']"));
         trending.click();
         wait.until(ExpectedConditions.titleContains("Trending - YouTube"));
+    }
+
+    public void goToLeftMenuSubscriptionPage(){
+        WebElement subscription = driver.findElement(By.xpath("//a[@title='Subscriptions']"));
+        subscription.click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'Sign in')]")));
     }
 
 
