@@ -3,7 +3,7 @@ package youtube;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-import pageObjects.YoutubeHomePage;
+import pageObjects.LeftMenuPageObjects;
 import utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -12,7 +12,7 @@ public class TestLeftMenu {
     private WebDriver driver;
     private String webBrowser = "chrome";
     private String baseURL = "https://www.youtube.com/";
-    private YoutubeHomePage objects;
+    private LeftMenuPageObjects objects;
 
     @BeforeTest // methods under this annotation will be executed prior to the first test case in the TestNG file.
     public void beforeTest(){
@@ -23,7 +23,7 @@ public class TestLeftMenu {
         driver.get(baseURL);
 
         // Initialize youtube home page objects before the other tests
-        this.objects = new YoutubeHomePage(driver);
+        this.objects = new LeftMenuPageObjects(driver);
     }
 
     @BeforeMethod // methods under this annotation will be executed prior to each method in each test case.
@@ -51,10 +51,10 @@ public class TestLeftMenu {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void leftMenuSubscriptions(){
-        WebElement subscriptions = driver.findElement(By.xpath("//a[@title='Subscriptions']"));
-        Assert.assertEquals(subscriptions.getAttribute("title"),"Subscriptions");
+        objects.goToLeftMenuSubscriptionPage();
+        Assert.assertEquals(objects.getCurrentURL(),"https://www.youtube.com/feed/subscriptions");
     }
 
     @Test
