@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
-public class YoutubeHomePage {
+public class LeftMenuPageObjects {
     private WebDriver driver;
     private WebDriverWait wait;
 
     //Constructor
-    public YoutubeHomePage(WebDriver driver){
+    public LeftMenuPageObjects(WebDriver driver){
         this.driver = driver;
 
         // used to set the default waiting time throughout the program
@@ -50,7 +50,7 @@ public class YoutubeHomePage {
     public void goToLeftMenuSubscriptionPage(){
         WebElement subscription = driver.findElement(By.xpath("//a[@title='Subscriptions']"));
         subscription.click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'Sign in')]")));
+        wait.until(ExpectedConditions.titleContains("Subscriptions - YouTube"));
     }
 
 
