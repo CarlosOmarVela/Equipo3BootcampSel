@@ -8,7 +8,7 @@ import youtube.pageobjects.BasePageObject;
 
 public class LogoPageObject extends BasePageObject {
 
-    @FindBy(how = How.ID, using = "logo")
+    @FindBy(how = How.XPATH, using = "//div[@id='logo-icon-container']")
     private WebElement ytLogo;
 
     public LogoPageObject(WebDriver driver, String baseURL) {

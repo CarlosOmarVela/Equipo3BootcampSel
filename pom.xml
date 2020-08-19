@@ -31,6 +31,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--<dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>-->
+
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -46,5 +52,12 @@
         </dependency>
 
     </dependencies>
+    <build>
+    <resources>
+        <resource>
+            <directory>src/test/resources</directory>
+        </resource>
+    </resources>
+    </build>
 
 </project>

@@ -8,10 +8,25 @@ import youtube.pageobjects.BasePageObject;
 
 public class CreatePageObject extends BasePageObject {
 
-    @FindBy(how = How.XPATH, using = "//div[@id='buttons']/ytd-topbar-menu-button-renderer[@class='style-scope ytd-masthead style-default'][1]")
+    @FindBy(how = How.XPATH, using = "(//button[@id='button']/yt-icon)[4](//button[@id='button']/yt-icon)[4]")
     private WebElement createIcon;
+
+    @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[21]")
+    private WebElement uploadVideo;
+
+    @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[22]")
+    private WebElement goLive;
 
     public CreatePageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
+    }
+    public void clickOnCreateIcon(){
+        this.createIcon.click();
+    }
+    public void clickOnUploadVideo(){
+        this.uploadVideo.click();
+    }
+    public void clickOnGoLive(){
+        this.goLive.click();
     }
 }

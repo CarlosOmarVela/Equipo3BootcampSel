@@ -8,10 +8,13 @@ import youtube.pageobjects.BasePageObject;
 
 public class SideBarPageObject extends BasePageObject {
 
-    @FindBy(how = How.ID, using = "guide-button")
-    private WebElement searchButton;
+    @FindBy(how = How.XPATH, using = "(//button[@id='button']/yt-icon)[2]")
+    private WebElement navMenu;
 
     public SideBarPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
+    }
+    public void clickOnNavMenu(){
+        this.navMenu.click();
     }
 }
