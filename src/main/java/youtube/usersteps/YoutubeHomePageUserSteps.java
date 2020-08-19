@@ -1,8 +1,8 @@
-package youtubenewdesign.usersteps;
+package youtube.usersteps;
 
 import org.openqa.selenium.WebDriver;
-import youtubenewdesign.page.YoutubeHomePage;
-import youtubenewdesign.pageobjects.header.YoutubeSearchPageObject;
+import youtube.page.YoutubeHomePage;
+import youtube.pageobjects.headerArea.SearchPageObject;
 
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
@@ -17,7 +17,7 @@ public class YoutubeHomePageUserSteps {
     }
 
     public void searchAProduct(String video){
-        YoutubeSearchPageObject youtubeSearchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
+        SearchPageObject youtubeSearchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
         youtubeSearchPageObject.sendKeysSearchBox(video);
         youtubeSearchPageObject.clickOnSearchButton();
     }

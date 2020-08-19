@@ -1,7 +1,7 @@
 package YoutubeTest;
 
 import org.testng.annotations.Test;
-import youtubenewdesign.usersteps.YoutubeHomePageUserSteps;
+import youtube.usersteps.YoutubeHomePageUserSteps;
 
 public class YoutubeTestCases extends BaseTestCase{
     @Test(priority = 1)

@@ -1,17 +1,17 @@
-package youtubenewdesign.pageobjects.header;
+package youtube.pageobjects.headerArea;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import youtubenewdesign.pageobjects.YoutubeBasePageObject;
+import youtube.pageobjects.BasePageObject;
 
-public class YoutubeAppsPageObject extends YoutubeBasePageObject {
+public class AppsPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "//div[@id='buttons']/ytd-topbar-menu-button-renderer[@class='style-scope ytd-masthead style-default'][2]")
     private WebElement createIcon;
 
-    public YoutubeAppsPageObject(WebDriver driver, String baseURL) {
+    public AppsPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
 }

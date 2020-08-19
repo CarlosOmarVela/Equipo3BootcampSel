@@ -1,12 +1,12 @@
-package youtubenewdesign.pageobjects.header;
+package youtube.pageobjects.headerArea;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import youtubenewdesign.pageobjects.YoutubeBasePageObject;
+import youtube.pageobjects.BasePageObject;
 
-public class YoutubeSearchPageObject extends YoutubeBasePageObject {
+public class SearchPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "//input[@id='search']")
     private WebElement searchBox;
@@ -14,7 +14,7 @@ public class YoutubeSearchPageObject extends YoutubeBasePageObject {
     @FindBy(how = How.XPATH, using = "//button[@id='search-icon-legacy']/yt-icon")
     private WebElement searchButton;
 
-    public YoutubeSearchPageObject(WebDriver driver, String baseURL) {
+    public SearchPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
 

@@ -1,6 +1,6 @@
-package youtubenewdesign.usersteps;
+package youtube.usersteps;
 
-import youtubenewdesign.page.YoutubeVideoPage;
+import youtube.page.YoutubeVideoPage;
 
 public class YoutubeVideoPageUserSteps {
     private YoutubeVideoPage youtubeVideoPage;

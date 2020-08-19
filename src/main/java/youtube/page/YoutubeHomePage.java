@@ -1,4 +1,4 @@
-package youtubenewdesign.page;
+package youtube.page;
 
 import org.openqa.selenium.WebDriver;
 

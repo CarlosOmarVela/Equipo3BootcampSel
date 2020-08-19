@@ -1,9 +1,9 @@
-package youtubenewdesign.page;
+package youtube.page;
 
 import org.openqa.selenium.WebDriver;
-import youtubenewdesign.components.YoutubeHeaderComponent;
-import youtubenewdesign.components.YoutubeMainAreaComponent;
-import youtubenewdesign.components.YoutubeVideoComponent;
+import youtube.components.YoutubeHeaderComponent;
+import youtube.components.YoutubeMainAreaComponent;
+import youtube.components.YoutubeVideoComponent;
 
 public class YoutubeBasePage {
     private YoutubeHeaderComponent youtubeHeaderComponent;
