@@ -8,7 +8,7 @@ import youtube.pageobjects.BasePageObject;
 
 public class AppsPageObject extends BasePageObject {
 
-    @FindBy(how = How.XPATH, using = "(//button[@id='button']/yt-icon)[5]")
+    @FindBy(how = How.XPATH, using = "(//*[@id='button']//yt-icon-button[@id='button'])[2]//button")
     private WebElement ytApp;
 
     @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[21]")
@@ -29,8 +29,10 @@ public class AppsPageObject extends BasePageObject {
     public AppsPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
+
     public void clickOnYtApps(){
-        this.ytApp.click();
+        this.ytApp.getAttribute("arial-label");
+        //this.ytApp.click();
     }
     public void clickOnYtTV(){
         this.ytTV.click();

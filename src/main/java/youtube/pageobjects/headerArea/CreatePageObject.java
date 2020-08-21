@@ -8,7 +8,7 @@ import youtube.pageobjects.BasePageObject;
 
 public class CreatePageObject extends BasePageObject {
 
-    @FindBy(how = How.XPATH, using = "(//button[@id='button']/yt-icon)[4](//button[@id='button']/yt-icon)[4]")
+    @FindBy(how = How.XPATH, using = "(//*[@id='button']//yt-icon-button[@id='button'])[1]//button")
     private WebElement createIcon;
 
     @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[21]")
@@ -20,8 +20,10 @@ public class CreatePageObject extends BasePageObject {
     public CreatePageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
+
     public void clickOnCreateIcon(){
-        this.createIcon.click();
+        this.createIcon.getAttribute("aria-label");
+        //this.createIcon.click();
     }
     public void clickOnUploadVideo(){
         this.uploadVideo.click();

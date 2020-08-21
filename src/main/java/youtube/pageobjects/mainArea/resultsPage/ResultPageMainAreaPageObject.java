@@ -32,22 +32,23 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
         super(driver, baseURL);
     }
 
-    public List<WebElement> clickOnVideoTitle(){
-        this.videoTitle.get(1).getText();
-        return null;
+    public List<WebElement> getVideoTitles(){
+        return this.videoTitle;
     }
-    public List<WebElement> clickOnVideoThumbnail(){
-        this.videoThumbnail.get(1).getText();
-        return null;
+    public List<WebElement> getVideoThumbnails(){
+        return this.videoThumbnail;
     }
-    public List<WebElement> clickOnViews(){
-        return null;
+    public List<WebElement> getAuthors(){
+        return this.authors;
     }
-    public List<WebElement> clickOnDateRelease(){
-        return null;
+    public List<WebElement> getDescriptions(){
+        return this.videoDescription;
     }
-    public List<WebElement> clickOnThumbnail(){
-        return null;
+    public List<WebElement> getViews(){
+        return this.views;
+    }
+    public List<WebElement> getDateRelease(){
+        return this.dateRelease;
     }
 
 }

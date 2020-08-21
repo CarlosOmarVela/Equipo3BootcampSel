@@ -8,7 +8,7 @@ import youtube.pageobjects.BasePageObject;
 
 public class SettingsPageObject extends BasePageObject {
 
-    @FindBy(how = How.XPATH, using = "(//button[@id='button']/yt-icon)[6]")
+    @FindBy(how = How.XPATH, using = "(//*[@id='button']//yt-icon-button[@id='button'])[3]//button")
     private WebElement settingButton;
 
     @FindBy(how = How.XPATH, using = "//div[@id='items']/ytd-toggle-theme-compact-link-renderer/div[2]")
@@ -41,8 +41,10 @@ public class SettingsPageObject extends BasePageObject {
     public SettingsPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
+
     public void clickOnSettingButton(){
-        this.settingButton.click();
+        this.settingButton.getAttribute("aria-label");
+        //this.settingButton.click();
     }
     public void clickOnThemes(){
         this.themes.click();
