@@ -27,4 +27,8 @@ public class BaseTestCase {
         myDriver.close();
         myDriver.quit();
     }
+
+    public WebDriver getWebDriver(){
+        return this.myDriver;
+    }
 }
