@@ -11,10 +11,6 @@ public class YoutubeHomePageUserSteps {
         this.youtubeHomePage = new YoutubeHomePage(driver);
     }
 
-    public YoutubeHomePage getYoutubeHomePage() {
-        return youtubeHomePage;
-    }
-
     public void searchAProduct(String video){
         SearchPageObject youtubeSearchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
         youtubeSearchPageObject.sendKeysSearchBox(video);
