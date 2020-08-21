@@ -3,6 +3,7 @@ package YoutubeTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import utils.PropertyReader;
 import utils.WebDriverFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -13,13 +14,11 @@ public class BaseTestCase {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-        // Define which browser to use
-        String browser = "chrome";
 
         // Get correct driver for desire browser
-        myDriver = WebDriverFactory.getDriver(browser);
-        myDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        myDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        myDriver = WebDriverFactory.getDriver(PropertyReader.getProperty("test.properties","BROWSER"));
+        myDriver.manage().timeouts().pageLoadTimeout(Integer.parseInt(PropertyReader.getProperty("test.properties","PAGELOAD_TIMEOUT")), TimeUnit.SECONDS);
+        myDriver.manage().timeouts().implicitlyWait(Integer.parseInt(PropertyReader.getProperty("test.properties","IMPLICITLY_WAIT_TIMEOUT")), TimeUnit.SECONDS);
         myDriver.manage().window().maximize();
     }
 
