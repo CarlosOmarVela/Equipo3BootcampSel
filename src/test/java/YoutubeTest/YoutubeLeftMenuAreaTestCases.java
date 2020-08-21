@@ -1,14 +1,13 @@
 package YoutubeTest;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import utils.PropertyReader;
+import utils.listeners.TestListener;
 import youtube.page.YoutubeHomePage;
 import youtube.usersteps.YoutubeHomePageUserSteps;
 
+@Listeners({ TestListener.class})
 public class YoutubeLeftMenuAreaTestCases extends BaseTestCase {
     private YoutubeHomePageUserSteps youtubeHomePageUserSteps;
 
