@@ -27,4 +27,11 @@ public class YoutubeLeftMenuAreaTestCases extends BaseTestCase {
         youtubeHomePageUserSteps.clickOnLeftMenuSubscriptionsButton();
         Assert.assertEquals(this.myDriver.getCurrentUrl(),"https://www.youtube.com/feed/subscriptions");
     }
+    @Test
+    public void validateLeftMenuLibraryButton(){
+        this.myDriver.get(PropertyReader.getProperty("test.properties","URL"));
+        YoutubeHomePageUserSteps youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(this.myDriver);
+        youtubeHomePageUserSteps.clickOnLeftMenuLibraryButton();
+        Assert.assertEquals(this.myDriver.getCurrentUrl(),"https://www.youtube.com/feed/library");
+    }
 }
