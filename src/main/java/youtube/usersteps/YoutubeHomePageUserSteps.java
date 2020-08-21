@@ -6,7 +6,6 @@ import youtube.pageobjects.headerArea.SearchPageObject;
 
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
-    private WebDriver driver;
 
     public YoutubeHomePageUserSteps(WebDriver driver){
         this.youtubeHomePage = new YoutubeHomePage(driver);
