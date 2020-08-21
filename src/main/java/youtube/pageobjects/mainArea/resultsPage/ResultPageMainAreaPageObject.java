@@ -6,41 +6,48 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
 
+import java.util.List;
+
 public class ResultPageMainAreaPageObject extends BasePageObject {
 
-    @FindBy(how = How.ID, using = "video-title")
-    private WebElement videoTitle;
+    @FindBy(how = How.ID, using = "//*[@id='video-title']")
+    private List<WebElement> videoTitle;
 
-    @FindBy(how = How.XPATH, using = "//a[@class='yt-simple-endpoint style-scope yt-formatted-string']")
-    private WebElement author;
+    @FindBy(how = How.XPATH, using = "//*[@id='thumbnail']")
+    private List<WebElement> videoThumbnail;
 
-    @FindBy(how = How.XPATH, using = "//span[@class='style-scope ytd-video-meta-block'][1]")
-    private WebElement views;
+    @FindBy(how = How.XPATH, using = "//ytd-video-meta-block[@class='style-scope ytd-video-renderer']//a")
+    private List<WebElement> authors;
 
-    @FindBy(how = How.XPATH, using = "//span[@class='style-scope ytd-video-meta-block'][2]")
-    private WebElement dateRelease;
+    @FindBy(how = How.XPATH, using = "//*[@id='description-text']")
+    private List<WebElement> videoDescription;
 
-    @FindBy(how = How.XPATH, using = "//a[@id='thumbnail']//img[@class='style-scope yt-img-shadow']")
-    private WebElement thumbnail;
+    @FindBy(how = How.XPATH, using = "//*[@id='metadata-line']/span[1]")
+    private List<WebElement> views;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='metadata-line']/span[2]")
+    private List<WebElement> dateRelease;
 
     public ResultPageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
 
-    public void clickOnVideoTitle(){
-        this.videoTitle.click();
+    public List<WebElement> clickOnVideoTitle(){
+        this.videoTitle.get(1).getText();
+        return null;
     }
-    public void clickOnAuthor(){
-        this.author.click();
+    public List<WebElement> clickOnVideoThumbnail(){
+        this.videoThumbnail.get(1).getText();
+        return null;
     }
-    public void clickOnViews(){
-        this.views.click();
+    public List<WebElement> clickOnViews(){
+        return null;
     }
-    public void clickOnDateRelease(){
-        this.dateRelease.click();
+    public List<WebElement> clickOnDateRelease(){
+        return null;
     }
-    public void clickOnThumbnail(){
-        this.thumbnail.click();
+    public List<WebElement> clickOnThumbnail(){
+        return null;
     }
 
 }
