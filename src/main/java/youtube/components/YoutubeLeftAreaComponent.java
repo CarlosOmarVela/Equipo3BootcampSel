@@ -1,10 +1,7 @@
 package youtube.components;
 
 import org.openqa.selenium.WebDriver;
-import youtube.pageobjects.leftMenuArea.LeftMenuHomeButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuLibraryButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuSubscriptionButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuTrendingButtonPageObject;
+import youtube.pageobjects.leftMenuArea.*;
 
 public class YoutubeLeftAreaComponent {
 
@@ -12,12 +9,14 @@ public class YoutubeLeftAreaComponent {
     private LeftMenuTrendingButtonPageObject leftMenuTrendingButtonPageObject;
     private LeftMenuSubscriptionButtonPageObject leftMenuSubscriptionButtonPageObject;
     private LeftMenuLibraryButtonPageObject leftMenuLibraryButtonPageObject;
+    private LeftMenuHistoryButtonPageObject leftMenuHistoryButtonPageObject;
 
     public YoutubeLeftAreaComponent(WebDriver driver) {
         this.leftMenuHomeButtonPageObject = new LeftMenuHomeButtonPageObject(driver, driver.getCurrentUrl());
         this.leftMenuTrendingButtonPageObject = new LeftMenuTrendingButtonPageObject(driver, driver.getCurrentUrl());
         this.leftMenuSubscriptionButtonPageObject = new LeftMenuSubscriptionButtonPageObject(driver, driver.getCurrentUrl());
         this.leftMenuLibraryButtonPageObject = new LeftMenuLibraryButtonPageObject(driver,driver.getCurrentUrl());
+        this.leftMenuHistoryButtonPageObject = new LeftMenuHistoryButtonPageObject(driver, driver.getCurrentUrl());
     }
 
     public LeftMenuHomeButtonPageObject getLeftMenuHomeButtonPageObject() {
@@ -34,5 +33,9 @@ public class YoutubeLeftAreaComponent {
 
     public LeftMenuLibraryButtonPageObject getLeftMenuLibraryButtonPageObject() {
         return leftMenuLibraryButtonPageObject;
+    }
+
+    public LeftMenuHistoryButtonPageObject getLeftMenuHistoryButtonPageObject() {
+        return leftMenuHistoryButtonPageObject;
     }
 }

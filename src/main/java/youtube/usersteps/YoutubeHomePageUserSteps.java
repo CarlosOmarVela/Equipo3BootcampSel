@@ -3,10 +3,7 @@ package youtube.usersteps;
 import org.openqa.selenium.WebDriver;
 import youtube.page.YoutubeHomePage;
 import youtube.pageobjects.headerArea.SearchPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuHomeButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuLibraryButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuSubscriptionButtonPageObject;
-import youtube.pageobjects.leftMenuArea.LeftMenuTrendingButtonPageObject;
+import youtube.pageobjects.leftMenuArea.*;
 
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
@@ -39,5 +36,10 @@ public class YoutubeHomePageUserSteps {
     public void clickOnLeftMenuLibraryButton(){
         LeftMenuLibraryButtonPageObject leftMenuLibraryButtonPageObject = this.youtubeHomePage.getYoutubeLeftAreaComponent().getLeftMenuLibraryButtonPageObject();
         leftMenuLibraryButtonPageObject.clickOnLibraryButton();
+    }
+
+    public void clickOnLeftMenuHistoryButton(){
+        LeftMenuHistoryButtonPageObject leftMenuHistoryButtonPageObject = this.youtubeHomePage.getYoutubeLeftAreaComponent().getLeftMenuHistoryButtonPageObject();
+        leftMenuHistoryButtonPageObject.clickOnHistoryButton();
     }
 }
