@@ -8,7 +8,7 @@ import youtube.pageobjects.BasePageObject;
 
 public class LeftMenuHomeButtonPageObject extends BasePageObject {
 
-    @FindBy(how = How.XPATH, using = "//a[@id='endpoint']")
+    @FindBy(how = How.XPATH, using = "//a[@id='endpoint' and @title='Home']")
     private WebElement homeButton;
 
     public LeftMenuHomeButtonPageObject(WebDriver driver, String baseURL) {

@@ -13,4 +13,11 @@ public class YoutubeLeftMenuAreaTestCases extends BaseTestCase {
         youtubeHomePageUserSteps.clickOnLeftMenuHomeButton();
         Assert.assertEquals(this.myDriver.getCurrentUrl(),PropertyReader.getProperty("test.properties","URL"));
     }
+    @Test
+    public void validateLeftMenuTrendingButton(){
+        this.myDriver.get(PropertyReader.getProperty("test.properties","URL"));
+        YoutubeHomePageUserSteps youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(this.myDriver);
+        youtubeHomePageUserSteps.clickOnLeftMenuTrendingButton();
+        Assert.assertEquals(this.myDriver.getCurrentUrl(),"https://www.youtube.com/feed/trending");
+    }
 }
