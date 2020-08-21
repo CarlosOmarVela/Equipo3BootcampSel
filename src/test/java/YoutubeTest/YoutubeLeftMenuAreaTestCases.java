@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import utils.PropertyReader;
 import utils.listeners.TestListener;
-import youtube.page.YoutubeHomePage;
 import youtube.usersteps.YoutubeHomePageUserSteps;
 
 @Listeners({ TestListener.class})
