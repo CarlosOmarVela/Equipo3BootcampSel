@@ -17,7 +17,7 @@ public class YoutubeChannelPageUserSteps {
         return channelPageMainAreaPageObject.getChannelName();
     }
 
-    public boolean enoughVideosInNewsChannel(){
+    public boolean enoughVideosInChannelPage(){
         ChannelPageMainAreaPageObject channelPageMainAreaPageObject = this.youtubeChannelPage.getYoutubeChannelPageMainAreaComponent().getChannelPageMainAreaPageObject();
         if (channelPageMainAreaPageObject.countVideosInChannel() >= 5){
             return true;

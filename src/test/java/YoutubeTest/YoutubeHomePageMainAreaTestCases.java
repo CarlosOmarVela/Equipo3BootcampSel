@@ -35,7 +35,7 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     public void validateNewsSection(){
         youtubeHomePageUserSteps.clickOnLeftMenuNewsButton();
         Assert.assertEquals(youtubeChannelPageUserSteps.nameOfChannel(),"News");
-        Assert.assertEquals(youtubeChannelPageUserSteps.enoughVideosInNewsChannel(),true,"La seccion de Noticias tiene menos de 5 videos");
+        Assert.assertEquals(youtubeChannelPageUserSteps.enoughVideosInChannelPage(),true,"La seccion de Noticias tiene menos de 5 videos");
     }
 
     @Test
