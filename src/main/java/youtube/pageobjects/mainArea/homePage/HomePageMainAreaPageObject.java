@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
 
+import java.util.List;
+
 public class HomePageMainAreaPageObject extends BasePageObject {
 
     @FindBy(how = How.ID, using = "video-title")
@@ -22,6 +24,9 @@ public class HomePageMainAreaPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "//a[@id='thumbnail']//img[@class='style-scope yt-img-shadow']")
     private WebElement thumbnail;
+
+    @FindBy(how = How.XPATH, using = "(//div[@id='contents'])[1]/ytd-rich-item-renderer")
+    private List<WebElement> videosInRecommendedSection;
 
     public HomePageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
@@ -41,5 +46,8 @@ public class HomePageMainAreaPageObject extends BasePageObject {
     }
     public void clickOnThumbnail(){
         this.thumbnail.click();
+    }
+    public int countVideosInRecommendedSection(){
+        return videosInRecommendedSection.size();
     }
 }

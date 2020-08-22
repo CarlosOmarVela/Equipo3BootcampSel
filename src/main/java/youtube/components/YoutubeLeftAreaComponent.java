@@ -10,6 +10,7 @@ public class YoutubeLeftAreaComponent {
     private LeftMenuSubscriptionButtonPageObject leftMenuSubscriptionButtonPageObject;
     private LeftMenuLibraryButtonPageObject leftMenuLibraryButtonPageObject;
     private LeftMenuHistoryButtonPageObject leftMenuHistoryButtonPageObject;
+    private LeftMenuBestOfYoutubePageObject leftMenuBestOfYoutubePageObject;
 
     public YoutubeLeftAreaComponent(WebDriver driver) {
         this.leftMenuHomeButtonPageObject = new LeftMenuHomeButtonPageObject(driver, driver.getCurrentUrl());
@@ -17,6 +18,7 @@ public class YoutubeLeftAreaComponent {
         this.leftMenuSubscriptionButtonPageObject = new LeftMenuSubscriptionButtonPageObject(driver, driver.getCurrentUrl());
         this.leftMenuLibraryButtonPageObject = new LeftMenuLibraryButtonPageObject(driver,driver.getCurrentUrl());
         this.leftMenuHistoryButtonPageObject = new LeftMenuHistoryButtonPageObject(driver, driver.getCurrentUrl());
+        this.leftMenuBestOfYoutubePageObject = new LeftMenuBestOfYoutubePageObject(driver, driver.getCurrentUrl());
     }
 
     public LeftMenuHomeButtonPageObject getLeftMenuHomeButtonPageObject() {
@@ -37,5 +39,9 @@ public class YoutubeLeftAreaComponent {
 
     public LeftMenuHistoryButtonPageObject getLeftMenuHistoryButtonPageObject() {
         return leftMenuHistoryButtonPageObject;
+    }
+
+    public LeftMenuBestOfYoutubePageObject getLeftMenuBestOfYoutubePageObject() {
+        return leftMenuBestOfYoutubePageObject;
     }
 }

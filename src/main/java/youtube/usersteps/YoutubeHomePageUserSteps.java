@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import youtube.page.YoutubeHomePage;
 import youtube.pageobjects.headerArea.*;
 import youtube.pageobjects.leftMenuArea.*;
+import youtube.pageobjects.mainArea.homePage.HomePageMainAreaPageObject;
 
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
@@ -66,5 +67,18 @@ public class YoutubeHomePageUserSteps {
     public void clickOnAuthenticationButton(){
         AuthenticationPageObject authenticationPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAuthenticationPageObject();
         authenticationPageObject.clickOnAuthButton();
+    }
+
+    public boolean enoughVideosInRecommendedSection(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        if (homePageMainAreaPageObject.countVideosInRecommendedSection() >= 5){
+            return true;
+        }
+        return false;
+    }
+
+    public void clickOnLeftMenuNewsButton(){
+        LeftMenuBestOfYoutubePageObject leftMenuBestOfYoutubePageObject = this.youtubeHomePage.getYoutubeLeftAreaComponent().getLeftMenuBestOfYoutubePageObject();
+        leftMenuBestOfYoutubePageObject.clickOnLeftMenuNewsButton();
     }
 }
