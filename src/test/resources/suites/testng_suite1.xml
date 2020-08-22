@@ -1,8 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Youtube" verbose="1">
-    <test name="Home Page">
+<suite name="Youtube Suite" verbose="1">
+    <test name="Test Cases">
         <classes>
             <class name="YoutubeTest.YoutubeLeftMenuAreaTestCases"></class>
+            <class name="YoutubeTest.YoutubeHeaderAreaTestCases"></class>
+            <class name="YoutubeTest.YoutubeHomePageMainAreaTestCases"></class>
+            <class name="YoutubeTest.YoutubeVideoDetailsPageTestCases"></class>
         </classes>
     </test>
 </suite>
