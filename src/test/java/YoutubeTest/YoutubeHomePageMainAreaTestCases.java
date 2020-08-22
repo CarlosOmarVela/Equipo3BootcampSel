@@ -39,7 +39,9 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
-    public void validateTrendingSection(){}
+    public void validateTrendingSection(){
+        Assert.assertEquals(youtubeHomePageUserSteps.enoughVideosInTrendingSection(),true,"La seccion de Trending tiene menos de 5 videos");
+    }
 
     @Test
     public void validateVideoComponentInformation(){}

@@ -81,4 +81,12 @@ public class YoutubeHomePageUserSteps {
         LeftMenuBestOfYoutubePageObject leftMenuBestOfYoutubePageObject = this.youtubeHomePage.getYoutubeLeftAreaComponent().getLeftMenuBestOfYoutubePageObject();
         leftMenuBestOfYoutubePageObject.clickOnLeftMenuNewsButton();
     }
+
+    public boolean enoughVideosInTrendingSection(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        if (homePageMainAreaPageObject.countVideosInTrendingSection() >= 5){
+            return true;
+        }
+        return false;
+    }
 }

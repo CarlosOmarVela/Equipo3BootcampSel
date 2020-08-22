@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class HomePageMainAreaPageObject extends BasePageObject {
@@ -28,6 +29,9 @@ public class HomePageMainAreaPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "(//div[@id='contents'])[1]/ytd-rich-item-renderer")
     private List<WebElement> videosInRecommendedSection;
 
+    @FindBy(how = How.XPATH, using = "((//div[@id='contents'])[1]/ytd-rich-section-renderer)[1]//ytd-rich-item-renderer")
+    private List<WebElement> videosInTrendingSection;
+
     public HomePageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
@@ -35,19 +39,36 @@ public class HomePageMainAreaPageObject extends BasePageObject {
     public void clickOnVideoTitle(){
         this.videoTitle.click();
     }
+
     public void clickOnAuthor(){
         this.author.click();
     }
+
     public void clickOnViews(){
         this.views.click();
     }
+
     public void clickOnDateRelease(){
         this.dateRelease.click();
     }
+
     public void clickOnThumbnail(){
         this.thumbnail.click();
     }
+
     public int countVideosInRecommendedSection(){
         return videosInRecommendedSection.size();
+    }
+
+    public int countVideosInTrendingSection(){
+        int visibleVideos = 0;
+        Iterator iter = videosInTrendingSection.iterator();
+        while (iter.hasNext()){
+            WebElement temp = (WebElement) iter.next();
+            if(temp.isDisplayed()){
+                visibleVideos++;
+            }
+        }
+        return visibleVideos;
     }
 }
