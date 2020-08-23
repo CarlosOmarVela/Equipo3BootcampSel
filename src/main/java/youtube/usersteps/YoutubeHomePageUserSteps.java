@@ -9,9 +9,7 @@ import youtube.pageobjects.mainArea.homePage.HomePageMainAreaPageObject;
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
 
-    public YoutubeHomePageUserSteps(WebDriver driver){
-        this.youtubeHomePage = new YoutubeHomePage(driver);
-    }
+    public YoutubeHomePageUserSteps(WebDriver driver){ this.youtubeHomePage = new YoutubeHomePage(driver);}
 
     public void searchAProduct(String video){
         SearchPageObject youtubeSearchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();

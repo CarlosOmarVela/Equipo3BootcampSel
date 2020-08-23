@@ -35,4 +35,18 @@ public class VideoPageMainAreaPageObject extends BasePageObject {
     public void clickOnMainVideo(){
         this.mainVideo.click();
     }
+
+    public WebElement getMainVideo() { return this.mainTitle; }
+
+    public WebElement getMainTitle() { return this.mainTitle; }
+
+    public WebElement getMainViews() { return this.mainTitle; }
+
+    public WebElement getMainLikes() { return this.mainTitle; }
+
+    public WebElement getMainDislikes() { return this.mainTitle; }
+
+    public WebElement getDescription() { return this.mainTitle; }
+
+    public WebElement getComments() { return this.mainTitle; }
 }
