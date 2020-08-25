@@ -1,10 +1,15 @@
 package youtube.pageobjects.headerArea;
 
+import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import sun.jvm.hotspot.utilities.Assert;
 import youtube.pageobjects.BasePageObject;
+
+import static sun.jvm.hotspot.utilities.Assert.*;
 
 public class SettingsPageObject extends BasePageObject {
 
@@ -15,7 +20,7 @@ public class SettingsPageObject extends BasePageObject {
     private WebElement themes;
 
     @FindBy(how = How.XPATH, using = "//a[@id='endpoint']/paper-item/yt-formatted-string[2]")
-    private WebElement languaje;
+    private WebElement language;
 
     @FindBy(how = How.XPATH, using = "(//yt-formatted-string[@id='label'])[2]")
     private WebElement location;
@@ -38,39 +43,52 @@ public class SettingsPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[28]")
     private WebElement restrictedMode;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='header']/ytd-simple-menu-header-renderer/h2/yt-formatted-string")
+    private WebElement darkTheme;
+
+    Actions actions = new Actions(driver);
+
     public SettingsPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
 
     public void clickOnSettingButton(){
-        this.settingButton.getAttribute("aria-label");
-        //this.settingButton.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
     }
     public void clickOnThemes(){
-        this.themes.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.themes).click().build().perform();
     }
-    public void clickOnLanguajeYT(){
-        this.languaje.click();
+    public void clickOnLanguage(){
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.language).click().build().perform();
     }
     public void clickOnLocation(){
-        this.location.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.location).click().build().perform();
     }
     public void clickOnSettingLink(){
-        this.settingLink.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.settingLink).click().build().perform();
     }
     public void clickOnYourDataYT(){
-        this.yourDataYT.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.yourDataYT).click().build().perform();
     }
     public void clickOnHelp(){
-        this.help.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.help).click().build().perform();
     }
     public void clickOnSendFeedback(){
-        this.sendFeedback.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.sendFeedback).click().build().perform();
     }
     public void clickOnKeyboardShortcuts(){
-        this.keyboardShortcuts.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.keyboardShortcuts).click().build().perform();
     }
     public void clickOnRestrictedMode(){
-        this.restrictedMode.click();
+        actions.moveToElement(this.settingButton).click().build().perform();
+        actions.moveToElement(this.restrictedMode).click().build().perform();
     }
 }

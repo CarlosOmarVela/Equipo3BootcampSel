@@ -47,9 +47,19 @@ public class YoutubeHomePageUserSteps {
         logoPageObject.clickOnYtLogo();
     }
 
-    public void clickOnCreate(){
+    public void create(){
         CreatePageObject createPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeCreatePageObject();
         createPageObject.clickOnCreateIcon();
+    }
+
+    public void clickOnCreate(){
+        CreatePageObject createPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeCreatePageObject();
+        createPageObject.clickOnUploadVideo();
+    }
+
+    public void clickOnLive(){
+        CreatePageObject createPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeCreatePageObject();
+        createPageObject.clickOnGoLive();
     }
 
     public void clickOnApps(){
@@ -57,9 +67,79 @@ public class YoutubeHomePageUserSteps {
         appsPageObject.clickOnYtApps();
     }
 
+    public void clickOnYtTV(){
+        AppsPageObject appsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAppsPageObject();
+        appsPageObject.clickOnTV();
+    }
+
+    public void clickOnYtMusic(){
+        AppsPageObject appsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAppsPageObject();
+        appsPageObject.clickOnMusic();
+    }
+
+    public void clickOnYtKids(){
+        AppsPageObject appsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAppsPageObject();
+        appsPageObject.clickOnKids();
+    }
+
+    public void clickOnYtCreatorAcademy(){
+        AppsPageObject appsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAppsPageObject();
+        appsPageObject.clickOnAcademy();
+    }
+
+    public void clickOnYtForArtists(){
+        AppsPageObject appsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeAppsPageObject();
+        appsPageObject.clickOnArtists();
+    }
+
     public void clickOnSettings(){
         SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
         settingsPageObject.clickOnSettingButton();
+    }
+
+    public void clickOnTheme(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnThemes();
+    }
+
+    public void clickOnLanguage(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnLanguage();
+    }
+
+    public void clickOnLocation(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnLocation();
+    }
+
+    public void clickOnSetLink(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnSettingLink();
+    }
+
+    public void clickOnData(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnYourDataYT();
+    }
+
+    public void clickOnHelp(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnHelp();
+    }
+
+    public void clickOnFeedback(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnSendFeedback();
+    }
+
+    public void clickOnKeyboard(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnKeyboardShortcuts();
+    }
+
+    public void clickOnRestricted(){
+        SettingsPageObject settingsPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSettingsPageObject();
+        settingsPageObject.clickOnRestrictedMode();
     }
 
     public void clickOnAuthenticationButton(){

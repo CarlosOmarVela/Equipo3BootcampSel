@@ -35,27 +35,103 @@ public class YoutubeHeaderAreaTestCases extends BaseTestCase{
         Assert.assertEquals(this.myDriver.getCurrentUrl(), PropertyReader.getProperty("test.properties","URL"));
     }
 
-    @Test
+    @Test(groups = {"Create", "Header"})
     public void validateCreateIcon(){
-        youtubeHomePageUserSteps.clickOnCreate();
-        //Assert.assertEquals(myDriver.findElement(By.xpath("(//button[@id='button']/yt-icon)[4](//button[@id='button']/yt-icon)[4]")),"(//button[@id='button']/yt-icon)[4](//button[@id='button']/yt-icon)[4]");
+        youtubeHomePageUserSteps.create();
     }
 
-    @Test
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"},groups = {"Create"})
+    public void selectUploadVideo(){
+        youtubeHomePageUserSteps.clickOnCreate();
+    }
+
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"},groups = {"Create"})
+    public void selectGoLive(){
+        youtubeHomePageUserSteps.clickOnLive();
+    }
+
+    @Test(groups = {"AppsYoutube", "Header"})
     public void validateAppsYoutubeIcon(){
         youtubeHomePageUserSteps.clickOnApps();
-        //Assert.assertEquals(myDriver.findElement(By.xpath("(//*[@id='button']//yt-icon-button[@id='button'])[2]")),"(//*[@id='button']//yt-icon-button[@id='button'])[2]");
     }
 
-    @Test
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"}, groups = {"AppsYoutube"})
+    public void selectYoutubeTV(){
+        youtubeHomePageUserSteps.clickOnYtTV();
+    }
+
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"}, groups = {"AppsYoutube"})
+    public void selectYoutubeMusic(){
+        youtubeHomePageUserSteps.clickOnYtMusic();
+    }
+
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"}, groups = {"AppsYoutube"})
+    public void selectYoutubeKids(){
+        youtubeHomePageUserSteps.clickOnYtKids();
+    }
+
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"}, groups = {"AppsYoutube"})
+    public void selectYoutubeCreatorAcademy(){
+        youtubeHomePageUserSteps.clickOnYtCreatorAcademy();
+    }
+
+    @Test(dependsOnMethods = {"validateAppsYoutubeIcon"}, groups = {"AppsYoutube"})
+    public void selectYoutubeForArtists(){
+        youtubeHomePageUserSteps.clickOnYtForArtists();
+    }
+
+    @Test(groups = {"Settings", "Header"})
     public void validateSettingsIcon(){
         youtubeHomePageUserSteps.clickOnSettings();
-        //Assert.assertEquals(myDriver.findElement(By.xpath("(//button[@id='button']/yt-icon)[6]")),"(//button[@id='button']/yt-icon)[6]");
     }
 
-    @Test
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingsTheme(){
+        youtubeHomePageUserSteps.clickOnTheme();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingsLanguage(){
+        youtubeHomePageUserSteps.clickOnLanguage();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingsLocation(){
+        youtubeHomePageUserSteps.clickOnLocation();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingSettingLink(){
+        youtubeHomePageUserSteps.clickOnSetLink();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingData(){
+        youtubeHomePageUserSteps.clickOnData();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingHelp(){
+        youtubeHomePageUserSteps.clickOnHelp();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingSendFeedback(){
+        youtubeHomePageUserSteps.clickOnFeedback();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingKeyboardShortcut(){
+        youtubeHomePageUserSteps.clickOnKeyboard();
+    }
+
+    @Test(dependsOnMethods = {"validateSettingsIcon"}, groups = {"Settings"})
+    public void validateSettingRestrictedMode(){
+        youtubeHomePageUserSteps.clickOnRestricted();
+    }
+
+    @Test(groups = {"Login"})
     public void validateLoginButton(){
         youtubeHomePageUserSteps.clickOnAuthenticationButton();
-        //Assert.assertEquals(myDriver.findElement(By.xpath("(//paper-button[@id='button']/yt-formatted-string)[2]")),"(//paper-button[@id='button']/yt-formatted-string)[2]");
     }
 }
