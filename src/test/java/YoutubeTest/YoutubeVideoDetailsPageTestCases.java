@@ -116,10 +116,19 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
         Assert.assertTrue(youtubeVideoPageUserSteps.fullScreenButtonIsPresent(),"The comments area isn't present");
     }
 
-    /*@Test
-    public void validateHeader(){}
-
     @Test
+    public void playAndPauseVideo() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.playButtonIsPresent(),"The comments area isn't present");
+        youtubeVideoPageUserSteps.clickOnPlayButton();
+        Thread.sleep(2000);
+        youtubeVideoPageUserSteps.clickOnPlayButton();
+        Thread.sleep(2000);
+        youtubeVideoPageUserSteps.clickOnPlayButton();
+    }
+
+
+
+    /*@Test
     public void validateRelatedContent(){}
 
     @Test

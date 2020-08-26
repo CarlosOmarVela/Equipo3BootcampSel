@@ -94,4 +94,9 @@ public class YoutubeVideoPageUserSteps {
         VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
         return videoPageMainAreaPageObject.getFullScreenButton().isDisplayed();
     }
+
+    public void clickOnPlayButton() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getPlayButton().click();
+    }
 }
