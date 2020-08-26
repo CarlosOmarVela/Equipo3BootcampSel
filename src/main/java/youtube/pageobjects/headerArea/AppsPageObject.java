@@ -2,6 +2,7 @@ package youtube.pageobjects.headerArea;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
@@ -26,27 +27,33 @@ public class AppsPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "(//a[@id='endpoint']/paper-item)[25]")
     private WebElement ytForArtists;
 
+    Actions actions = new Actions(driver);
+
     public AppsPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
     }
 
     public void clickOnYtApps(){
-        this.ytApp.getAttribute("arial-label");
-        //this.ytApp.click();
+        actions.moveToElement(this.ytApp).click().build().perform();
     }
-    public void clickOnYtTV(){
-        this.ytTV.click();
+    public void clickOnTV(){
+        actions.moveToElement(this.ytApp).click().build().perform();
+        actions.moveToElement(this.ytTV).pause(1000).click().build().perform();
     }
-    public void clickOnYtMusic(){
-        this.ytMusic.click();
+    public void clickOnMusic(){
+        actions.moveToElement(this.ytApp).click().build().perform();
+        actions.moveToElement(this.ytMusic).click().build().perform();
     }
-    public void clickOnYtKids(){
-        this.ytKids.click();
+    public void clickOnKids(){
+        actions.moveToElement(this.ytApp).click().build().perform();
+        actions.moveToElement(this.ytKids).click().build().perform();
     }
-    public void clickOnCreatorAcademy(){
-        this.creatorAcademy.click();
+    public void clickOnAcademy(){
+        actions.moveToElement(this.ytApp).click().build().perform();
+        actions.moveToElement(this.creatorAcademy).click().build().perform();
     }
-    public void clickOnYtForArtists(){
-        this.ytForArtists.click();
+    public void clickOnArtists(){
+        actions.moveToElement(this.ytApp).click().build().perform();
+        actions.moveToElement(this.ytForArtists).click().build().perform();
     }
 }
