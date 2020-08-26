@@ -53,4 +53,45 @@ public class YoutubeVideoPageUserSteps {
         return videoPageMainAreaPageObject.getComments().isDisplayed();
     }
 
+    //---
+
+    public boolean playButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getPlayButton().isDisplayed();
+    }
+
+    public boolean nextVideoButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getNextVideoButton().isDisplayed();
+    }
+
+    public boolean videoDurationLabelIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getVideoDurationLabel().isDisplayed();
+    }
+
+    public boolean enableSubtitlesIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getEnableSubtitles().isDisplayed();
+    }
+
+    public boolean settingsButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getSettingsButton().isDisplayed();
+    }
+
+    public boolean miniPlayerButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getMiniPlayerButton().isDisplayed();
+    }
+
+    public boolean sizeButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getSizeButton().isDisplayed();
+    }
+
+    public boolean fullScreenButtonIsPresent() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getFullScreenButton().isDisplayed();
+    }
 }

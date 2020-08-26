@@ -61,9 +61,59 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     }
 
     @Test
-    public void validatComentsIsPresent(){
+    public void validateComentsIsPresent(){
         //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
         Assert.assertTrue(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+    }
+
+    //------
+
+    @Test
+    public void validatePlayButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.playButtonIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateNextVideoButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.nextVideoButtonIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validatEvideoDurationLabelIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.videoDurationLabelIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateEnableSubtitlesIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.enableSubtitlesIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateSettingsButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateMiniPlayerButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.miniPlayerButtonIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateSizeButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.sizeButtonIsPresent(),"The comments area isn't present");
+    }
+
+    @Test
+    public void validateFullScreenButtonIsPresent(){
+        //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.fullScreenButtonIsPresent(),"The comments area isn't present");
     }
 
     /*@Test
