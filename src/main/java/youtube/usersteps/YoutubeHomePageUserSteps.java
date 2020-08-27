@@ -2,17 +2,23 @@ package youtube.usersteps;
 
 import org.openqa.selenium.WebDriver;
 import youtube.page.YoutubeHomePage;
+import youtube.page.YoutubeResultPage;
 import youtube.pageobjects.headerArea.*;
 import youtube.pageobjects.leftMenuArea.*;
 import youtube.pageobjects.mainArea.homePage.HomePageMainAreaPageObject;
+import youtube.pageobjects.mainArea.resultsPage.ResultPageMainAreaPageObject;
 
-public class YoutubeHomePageUserSteps {
+public class YoutubeHomePageUserSteps extends YoutubeResultPageUserSteps{
     private YoutubeHomePage youtubeHomePage;
+    private YoutubeResultPage youtubeResultPage;
     private WebDriver driver;
 
+
     public YoutubeHomePageUserSteps(WebDriver driver){
+        super();
         this.driver = driver;
         this.youtubeHomePage = new YoutubeHomePage(driver);
+        this.youtubeResultPage = new YoutubeResultPage(driver);
     }
 
     public YoutubeResultPageUserSteps searchAProduct(String video){
@@ -50,6 +56,23 @@ public class YoutubeHomePageUserSteps {
     public void clickOnYoutubeLogo(){
         LogoPageObject logoPageObject  = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeLogoPageObject();
         logoPageObject.clickOnYtLogo();
+    }
+
+    public void clickOnSearchField(String video){
+        SearchPageObject searchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
+        searchPageObject.clickOnSearchField(video);
+    }
+    public SearchPageObject clickOnSearchButton(String video){
+        SearchPageObject searchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
+        searchPageObject.clickOnSearchField(video);
+        searchPageObject.clickOnSearchButton();
+        return new SearchPageObject(this.driver,driver.getCurrentUrl());
+    }
+
+    public void searchTextEnter(String video){
+        SearchPageObject searchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
+        searchPageObject.enterSearchField(video);
+        youtubeResultPage.getYoutubeResultPageMainAreaComponent().clickOnFirstVideo();
     }
 
     public void create(){

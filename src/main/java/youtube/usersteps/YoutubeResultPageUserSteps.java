@@ -15,6 +15,10 @@ public class YoutubeResultPageUserSteps {
         this.resultPageMainAreaPageObject = new ResultPageMainAreaPageObject(driver, driver.getCurrentUrl());
     }
 
+    public YoutubeResultPageUserSteps() {
+
+    }
+
     public List<WebElement> getResultsSubList(){
         List<WebElement> listResults = this.resultPageMainAreaPageObject.getVideoTitles();
         return listResults;
@@ -34,5 +38,9 @@ public class YoutubeResultPageUserSteps {
     public List<WebElement> getResultsSubListDataRelease(){
         List<WebElement> listResults = this.resultPageMainAreaPageObject.getDateRelease();
         return listResults;
+    }
+
+    public void enterFirstVideo(){
+        this.resultPageMainAreaPageObject.clickOnFirstVideo();
     }
 }

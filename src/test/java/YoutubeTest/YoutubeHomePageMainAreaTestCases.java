@@ -63,11 +63,15 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
 
     // Searching Scenario
     @Test
-    public void validateSearchedStringInResults(){}
+    public void validateSearchedStringInResults(){
+    }
 
     @Test
     public void validateSearchResultsVideoComponentInformation(){}
 
     @Test
-    public void validateClickOnSearchResultsVideo(){}
+    public void validateClickOnSearchResultsVideo(){
+        youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
+        youtubeHomePageUserSteps.searchTextEnter(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+    }
 }

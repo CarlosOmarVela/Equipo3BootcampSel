@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import utils.PropertyReader;
 import utils.listeners.TestListener;
 import youtube.usersteps.YoutubeHomePageUserSteps;
+import youtube.usersteps.YoutubeResultPageUserSteps;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,19 @@ public class YoutubeHeaderAreaTestCases extends BaseTestCase{
     public void validateLogoHomePage(){
         youtubeHomePageUserSteps.clickOnYoutubeLogo();
         Assert.assertEquals(this.myDriver.getCurrentUrl(), PropertyReader.getProperty("test.properties","URL"));
+    }
+
+    @Test
+    public void ValidateSearchField(){
+        youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
+        youtubeHomePageUserSteps.clickOnSearchField(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        Assert.assertTrue(myDriver.findElement(By.xpath("//input[@id='search']")).isDisplayed(),"No existe el campo de bùsqueda");
+    }
+
+    @Test
+    public void ValidateSearchButton(){
+        youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
+        youtubeHomePageUserSteps.clickOnSearchButton(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
     }
 
     @Test(groups = {"Create, Header"})
