@@ -15,12 +15,9 @@ public class YoutubeResultPageUserSteps {
         this.resultPageMainAreaPageObject = new ResultPageMainAreaPageObject(driver, driver.getCurrentUrl());
     }
 
-    public void clickOnThumbnail(int resultIndex){
-        this.resultPageMainAreaPageObject.getVideoThumbnails().get(resultIndex).click();
-    }
-
-    public List<WebElement> getResultsSubList(){
-        List<WebElement> listResults = this.resultPageMainAreaPageObject.getVideoTitles();
+    public boolean getResultsSubList(){
+        boolean listResults = this.resultPageMainAreaPageObject.getVideoTitles();
         return listResults;
     }
+
 }
