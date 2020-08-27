@@ -50,10 +50,16 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
-    public void validateClickOnVideoThumbnail(){}
+    public void validateClickOnVideoThumbnail(){
+        youtubeHomePageUserSteps.clickOnFirstVideoThumbnail();
+        Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo click en el thumbnail");
+    }
 
     @Test
-    public void validateClickOnVideoTitle(){}
+    public void validateClickOnVideoTitle(){
+        youtubeHomePageUserSteps.clickOnFirstVideoTitle();
+        Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo click en el Titulo del video");
+    }
 
     // Searching Scenario
     @Test

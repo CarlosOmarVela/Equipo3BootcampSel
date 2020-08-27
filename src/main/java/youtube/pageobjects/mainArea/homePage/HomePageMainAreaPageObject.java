@@ -86,4 +86,14 @@ public class HomePageMainAreaPageObject extends BasePageObject {
         }
         return true;
     }
+
+    public void clickOnFirstVideoThumbnail(){
+        WebElement videoThumbnail = firstVideoInHomePage.findElement(By.xpath("//a[@id='thumbnail']"));
+        videoThumbnail.click();
+    }
+
+    public void clickOnFirstVideoTitle(){
+        WebElement videoTitle = firstVideoInHomePage.findElement(By.xpath("//a[@id='video-title-link']"));
+        videoTitle.click();
+    }
 }
