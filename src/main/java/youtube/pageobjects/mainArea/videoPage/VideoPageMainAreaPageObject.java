@@ -54,6 +54,15 @@ public class VideoPageMainAreaPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "//*[@id='movie_player']/div[@class='ytp-chrome-bottom']/div[@class='ytp-chrome-controls']/div[@class='ytp-right-controls']/button[@class='ytp-fullscreen-button ytp-button']")
     private WebElement fullScreenButton;
 
+    //video player options
+    @FindBy(how = How.XPATH, using = "//*[text()='Playback speed']")
+    private WebElement speedPlayBackOptions;
+
+    //video player options
+    @FindBy(how = How.XPATH, using = "//*[text()='2']")
+    private WebElement speedTwoOption;
+
+
     //--------------------------
     public VideoPageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
@@ -78,6 +87,8 @@ public class VideoPageMainAreaPageObject extends BasePageObject {
 
     //------
 
+
+
     public WebElement getPlayButton() { return this.playButton; }
 
     public WebElement getNextVideoButton() { return this.nextVideoButton; }
@@ -93,5 +104,9 @@ public class VideoPageMainAreaPageObject extends BasePageObject {
     public WebElement getSizeButton() { return this.sizeButton; }
 
     public WebElement getFullScreenButton() { return this.fullScreenButton; }
+
+    public WebElement getSpeedPlayBackOptions() { return this.speedPlayBackOptions; }
+
+    public WebElement getSpeedTwoOption() { return this.speedTwoOption; }
 
 }

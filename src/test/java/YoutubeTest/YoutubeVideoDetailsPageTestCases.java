@@ -182,5 +182,16 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
         Thread.sleep(1000);
     }
 
-
+    @Test
+    public void fastPlaybackVideo() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"The settings button isn't present");
+        youtubeVideoPageUserSteps.maximizePlayBackVideo();
+        Thread.sleep(500);
+        youtubeVideoPageUserSteps.clickOptionsButton();
+        Thread.sleep(500);
+        youtubeVideoPageUserSteps.clickOnSpeedPlayBackOptions();
+        Thread.sleep(500);
+        youtubeVideoPageUserSteps.clickOnSpeedTwoOption();
+        Thread.sleep(7000);
+    }
 }
