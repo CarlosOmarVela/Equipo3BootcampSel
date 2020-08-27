@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ResultPageMainAreaPageObject extends BasePageObject {
 
-    @FindBy(how = How.ID, using = "//*[@id='video-title']")
+    @FindBy(how = How.ID, using = "//div[@id='meta']//h3[@class='title-and-badge style-scope ytd-video-renderer']//a[contains(text(),shakira)]")
     private List<WebElement> videoTitle;
 
     @FindBy(how = How.XPATH, using = "//*[@id='thumbnail']")
@@ -34,6 +34,7 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
 
     public List<WebElement> getVideoTitles(){
         return this.videoTitle;
+
     }
     public List<WebElement> getVideoThumbnails(){
         return this.videoThumbnail;

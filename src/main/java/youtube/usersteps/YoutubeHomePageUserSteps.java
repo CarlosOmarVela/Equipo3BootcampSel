@@ -8,13 +8,18 @@ import youtube.pageobjects.mainArea.homePage.HomePageMainAreaPageObject;
 
 public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
+    private WebDriver driver;
 
-    public YoutubeHomePageUserSteps(WebDriver driver){ this.youtubeHomePage = new YoutubeHomePage(driver);}
+    public YoutubeHomePageUserSteps(WebDriver driver){
+        this.driver = driver;
+        this.youtubeHomePage = new YoutubeHomePage(driver);
+    }
 
-    public void searchAProduct(String video){
+    public YoutubeResultPageUserSteps searchAProduct(String video){
         SearchPageObject youtubeSearchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
         youtubeSearchPageObject.sendKeysSearchBox(video);
         youtubeSearchPageObject.clickOnSearchButton();
+        return new YoutubeResultPageUserSteps(this.driver);
     }
 
     public void clickOnLeftMenuHomeButton(){

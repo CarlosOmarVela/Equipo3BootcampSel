@@ -19,8 +19,8 @@ public class YoutubeResultPageUserSteps {
         this.resultPageMainAreaPageObject.getVideoThumbnails().get(resultIndex).click();
     }
 
-    public List<WebElement> getResultsSubList(int startIndex, int endIndex){
-        List<WebElement> listResults = this.resultPageMainAreaPageObject.getVideoThumbnails();
-        return listResults.subList(startIndex,endIndex);
+    public List<WebElement> getResultsSubList(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getVideoTitles();
+        return listResults;
     }
 }
