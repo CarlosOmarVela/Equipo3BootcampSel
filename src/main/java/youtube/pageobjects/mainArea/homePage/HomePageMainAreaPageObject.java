@@ -1,5 +1,6 @@
 package youtube.pageobjects.mainArea.homePage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +32,9 @@ public class HomePageMainAreaPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "((//div[@id='contents'])[1]/ytd-rich-section-renderer)[1]//ytd-rich-item-renderer")
     private List<WebElement> videosInTrendingSection;
+
+    @FindBy(how = How.XPATH, using = "(//div[@id='contents'])[1]/ytd-rich-item-renderer")
+    private WebElement firstVideoInHomePage;
 
     public HomePageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
@@ -70,5 +74,16 @@ public class HomePageMainAreaPageObject extends BasePageObject {
             }
         }
         return visibleVideos;
+    }
+
+    public boolean videoComponentInformation(){
+        String videoTitle = firstVideoInHomePage.findElement(By.xpath("//a[@id='video-title-link']")).getAttribute("title");
+        String author = firstVideoInHomePage.findElement(By.xpath("//a[@id='avatar-link']")).getAttribute("title");
+        String viewsCount = firstVideoInHomePage.findElement(By.xpath("//div[@id='metadata-line']/span")).getText();
+        WebElement videoThumbnail = firstVideoInHomePage.findElement(By.xpath("//a[@id='thumbnail']"));
+        if (videoTitle.isEmpty() || author.isEmpty() || viewsCount.isEmpty() || videoThumbnail == null){
+            return false;
+        }
+        return true;
     }
 }

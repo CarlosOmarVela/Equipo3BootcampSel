@@ -1,15 +1,11 @@
 package youtube.pageobjects.headerArea;
 
-import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import sun.jvm.hotspot.utilities.Assert;
 import youtube.pageobjects.BasePageObject;
-
-import static sun.jvm.hotspot.utilities.Assert.*;
 
 public class SettingsPageObject extends BasePageObject {
 

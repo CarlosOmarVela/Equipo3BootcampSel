@@ -44,7 +44,10 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
-    public void validateVideoComponentInformation(){}
+    public void validateVideoComponentInformation(){
+        youtubeHomePageUserSteps.videoComponentInformation();
+        Assert.assertEquals(youtubeHomePageUserSteps.videoComponentInformation(),true,"La informacion del componente de video esta incompleta");
+    }
 
     @Test
     public void validateClickOnVideoThumbnail(){}

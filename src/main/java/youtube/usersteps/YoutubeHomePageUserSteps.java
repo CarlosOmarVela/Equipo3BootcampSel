@@ -172,4 +172,9 @@ public class YoutubeHomePageUserSteps {
         }
         return false;
     }
+
+    public boolean videoComponentInformation(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        return homePageMainAreaPageObject.videoComponentInformation();
+    }
 }
