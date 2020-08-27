@@ -1,18 +1,18 @@
 package youtube.page;
 
 import org.openqa.selenium.WebDriver;
-import youtube.components.mainAreas.YoutubeResultPageMainAreaComponent;
+import youtube.pageobjects.mainArea.resultsPage.ResultPageMainAreaPageObject;
 
 public class YoutubeResultPage extends YoutubeBasePage{
 
-    private YoutubeResultPageMainAreaComponent youtubeResultPageMainAreaComponent;
+    private ResultPageMainAreaPageObject resultPageMainAreaPageObject;
 
     public YoutubeResultPage(WebDriver driver) {
         super(driver);
-        this.youtubeResultPageMainAreaComponent = new YoutubeResultPageMainAreaComponent(driver);
+        this.resultPageMainAreaPageObject = new ResultPageMainAreaPageObject(driver, driver.getCurrentUrl());
     }
 
-    public YoutubeResultPageMainAreaComponent getYoutubeResultPageMainAreaComponent() {
-        return youtubeResultPageMainAreaComponent;
+    public ResultPageMainAreaPageObject getYoutubeResultPageMainAreaComponent() {
+        return resultPageMainAreaPageObject;
     }
 }
