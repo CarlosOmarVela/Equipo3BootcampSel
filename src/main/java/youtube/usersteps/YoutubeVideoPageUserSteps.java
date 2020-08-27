@@ -122,4 +122,19 @@ public class YoutubeVideoPageUserSteps {
         VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
         videoPageMainAreaPageObject.getSettingsButton().click();
     }
+
+    public void clickOnMiniPlayerButton() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getMiniPlayerButton().click();
+    }
+
+    public void maximizePlayBackVideo() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getFullScreenButton().click();
+    }
+
+    public void clickOnSizeButton() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getSizeButton().click();
+    }
 }

@@ -154,8 +154,33 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
         Thread.sleep(3000);
     }
 
+    @Test
+    public void convertToMiniPayBacktheCurrentVideo() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.miniPlayerButtonIsPresent(),"The mini player button isn't pressent");
+        Thread.sleep(1500);
+        youtubeVideoPageUserSteps.clickOnMiniPlayerButton();
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void fullScreenPlayBackVideo() throws InterruptedException{
+        Assert.assertTrue(youtubeVideoPageUserSteps.fullScreenButtonIsPresent(),"The full screen button isn't pressent");
+        Thread.sleep(1500);
+        youtubeVideoPageUserSteps.maximizePlayBackVideo();
+        Thread.sleep(5000);
+        youtubeVideoPageUserSteps.maximizePlayBackVideo();
+        Thread.sleep(1500);
+    }
+
+    @Test
+    public void CinemaModePlayback() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.sizeButtonIsPresent(),"The cinema mode button isn't present");
+        Thread.sleep(1500);
+        youtubeVideoPageUserSteps.clickOnSizeButton();
+        Thread.sleep(4000);
+        youtubeVideoPageUserSteps.clickOnSizeButton();
+        Thread.sleep(1000);
+    }
 
 
-    /*@Test
-    public void validateComments(){}*/
 }
