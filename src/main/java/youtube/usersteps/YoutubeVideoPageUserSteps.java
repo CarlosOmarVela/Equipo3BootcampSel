@@ -137,4 +137,14 @@ public class YoutubeVideoPageUserSteps {
         VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
         videoPageMainAreaPageObject.getSizeButton().click();
     }
+
+    public void clickOnSpeedPlayBackOptions() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getSpeedPlayBackOptions().click();
+    }
+
+    public void clickOnSpeedTwoOption() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getSpeedTwoOption().click();
+    }
 }
