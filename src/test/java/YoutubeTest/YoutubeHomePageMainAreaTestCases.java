@@ -1,5 +1,7 @@
 package YoutubeTest;
 
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -69,9 +71,11 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     @Test
     public void validateSearchResultsVideoComponentInformation(){}
 
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void validateClickOnSearchResultsVideo(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
         youtubeHomePageUserSteps.searchTextEnter(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        Assert.assertEquals(this.myDriver.getCurrentUrl(),"https://www.youtube.com/watch?v=mf-UJ32PJgU");
     }
 }
