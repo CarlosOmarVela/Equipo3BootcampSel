@@ -118,7 +118,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
 
     @Test
     public void playAndPauseVideo() throws InterruptedException {
-        Assert.assertTrue(youtubeVideoPageUserSteps.playButtonIsPresent(),"The comments area isn't present");
+        Assert.assertTrue(youtubeVideoPageUserSteps.playButtonIsPresent(),"The play button isn't present");
         youtubeVideoPageUserSteps.clickOnPlayButton();
         Thread.sleep(2000);
         youtubeVideoPageUserSteps.clickOnPlayButton();
@@ -126,17 +126,36 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
         youtubeVideoPageUserSteps.clickOnPlayButton();
     }
 
+    @Test
+    public void changeToTheNextVideo() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.nextVideoButtonIsPresent(), "The NEXT button isn't present");
+        //this class press many times the button NEXT VIDEO, "time" parameter define the time between the button NEXT VIDEO is presed
+        // and the "repeat" parameter define how many times the button will be pressed
+        youtubeVideoPageUserSteps.clickOnNextVideoButton(2000, 6);
+    }
+
+    @Test
+    public void getAndPrintVideoDurationLabel(){
+        Assert.assertTrue(youtubeVideoPageUserSteps.videoDurationLabelIsPresent(),"The label of video isn't pressent");
+        System.out.println("The current video duration is: " + youtubeVideoPageUserSteps.getVideoDuration());
+    }
+
+    @Test
+    public void enableVideoSubTitles () throws InterruptedException{
+        Assert.assertTrue(youtubeVideoPageUserSteps.enableSubtitlesIsPresent(), "The sub titles button isn't present");
+        youtubeVideoPageUserSteps.enablieSubTitles();
+        Thread.sleep(6000);
+    }
+
+    @Test
+    public void clicOnOptionsButton() throws InterruptedException {
+        Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"");
+        youtubeVideoPageUserSteps.clickOptionsButton();
+        Thread.sleep(3000);
+    }
+
 
 
     /*@Test
-    public void validateRelatedContent(){}
-
-    @Test
-    public void validateVideoPlayer(){}
-
-    @Test
-    public void validateVideoInformation(){}
-
-    @Test
     public void validateComments(){}*/
 }

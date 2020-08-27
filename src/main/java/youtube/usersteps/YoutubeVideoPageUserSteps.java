@@ -99,4 +99,27 @@ public class YoutubeVideoPageUserSteps {
         VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
         videoPageMainAreaPageObject.getPlayButton().click();
     }
+
+    public void clickOnNextVideoButton(int time, int repeat) throws InterruptedException{
+        for(int i = 0; i < repeat; i++) {
+            VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+            videoPageMainAreaPageObject.getNextVideoButton().click();
+            Thread.sleep(time);
+        }
+    }
+
+    public String getVideoDuration() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        return videoPageMainAreaPageObject.getVideoDurationLabel().getText();
+    }
+
+    public void enablieSubTitles() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getEnableSubtitles().click();
+    }
+
+    public void clickOptionsButton() {
+        VideoPageMainAreaPageObject videoPageMainAreaPageObject = this.youtubeVideoPage.getYoutubeVideoPageMainAreaComponent().getVideoPageMainAreaPageObject();
+        videoPageMainAreaPageObject.getSettingsButton().click();
+    }
 }
