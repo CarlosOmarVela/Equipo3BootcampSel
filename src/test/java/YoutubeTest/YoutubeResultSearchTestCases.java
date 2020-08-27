@@ -35,7 +35,10 @@ public class YoutubeResultSearchTestCases extends BaseTestCase{
         YoutubeResultPageUserSteps youtubeResultPageUserSteps = youtubeHomePageUserSteps.searchAProduct(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertEquals(youtubeResultPageUserSteps.getResultsSubList(),true,"La informacion del componente de video esta incompleta");
-
+        softAssert.assertTrue(youtubeResultPageUserSteps.getResultsSubList().isEmpty(),"La informacion del componente de video esta incompleta");
+        softAssert.assertTrue(youtubeResultPageUserSteps.getResultsSubListAuthors().isEmpty(),"No todos los videos tienen autor");
+        softAssert.assertTrue(youtubeResultPageUserSteps.getResultsSubListViews().isEmpty(),"No todos los videos tienen views");
+        softAssert.assertTrue(youtubeResultPageUserSteps.getResultsSubListDesc().isEmpty(),"No todos los videos tienen descripción");
+        softAssert.assertTrue(youtubeResultPageUserSteps.getResultsSubListDataRelease().isEmpty(),"No todos los videos tienen fecha de creación");
     }
 }

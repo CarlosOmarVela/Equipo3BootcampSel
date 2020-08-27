@@ -15,9 +15,24 @@ public class YoutubeResultPageUserSteps {
         this.resultPageMainAreaPageObject = new ResultPageMainAreaPageObject(driver, driver.getCurrentUrl());
     }
 
-    public boolean getResultsSubList(){
-        boolean listResults = this.resultPageMainAreaPageObject.getVideoTitles();
+    public List<WebElement> getResultsSubList(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getVideoTitles();
         return listResults;
     }
-
+    public List<WebElement> getResultsSubListAuthors(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getAuthors();
+        return listResults;
+    }
+    public List<WebElement> getResultsSubListViews(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getViews();
+        return listResults;
+    }
+    public List<WebElement> getResultsSubListDesc(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getDescriptions();
+        return listResults;
+    }
+    public List<WebElement> getResultsSubListDataRelease(){
+        List<WebElement> listResults = this.resultPageMainAreaPageObject.getDateRelease();
+        return listResults;
+    }
 }

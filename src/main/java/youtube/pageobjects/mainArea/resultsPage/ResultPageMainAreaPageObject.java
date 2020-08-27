@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ResultPageMainAreaPageObject extends BasePageObject {
 
-    @FindBy(how = How.ID, using = "//h3[@class='title-and-badge style-scope ytd-video-renderer']/a[@id='video-title']/yt-formatted-string")
+    @FindBy(how = How.ID, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']//*[@id='video-title']/yt-formatted-string")
     private List<WebElement> videoTitle;
 
     @FindBy(how = How.XPATH, using = "//ytd-video-meta-block[@class='style-scope ytd-video-renderer']//a")
@@ -27,8 +27,8 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "//*[@id='metadata-line']/span[2]")
     private List<WebElement> dateRelease;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='contents']/ytd-video-renderer//h3/a/yt-formatted-string")
-    private WebElement contents;
+    @FindBy(how = How.XPATH, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']")
+    private List<WebElement> firstVideoInHomePage;
 
     Boolean display;
 
@@ -36,15 +36,19 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
         super(driver, baseURL);
     }
 
-    public boolean getVideoTitles(){
-        String videoTitle = contents.findElement(By.xpath("//a[@id='video-title']/yt-formatted-string")).getText();
-        String author = contents.findElement(By.xpath("//ytd-video-meta-block[@class='style-scope ytd-video-renderer']//a")).getAttribute("title");
-        String viewsCount = contents.findElement(By.xpath("//*[@id='metadata-line']/span[1]")).getText();
-        String description = contents.findElement(By.xpath("//*[@id='description-text']")).getText();
-        if (videoTitle.isEmpty() || author.isEmpty() || viewsCount.isEmpty() || description == null){
-            return false;
-        }
-        return true;
+    public List<WebElement> getVideoTitles(){
+        return videoTitle;
     }
-
+    public List<WebElement> getAuthors(){
+        return authors;
+    }
+    public List<WebElement> getDescriptions(){
+        return videoDescription;
+    }
+    public List<WebElement> getViews(){
+        return views;
+    }
+    public List<WebElement> getDateRelease(){
+        return dateRelease;
+    }
 }
