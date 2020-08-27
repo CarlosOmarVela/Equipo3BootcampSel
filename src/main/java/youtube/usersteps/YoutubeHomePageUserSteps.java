@@ -172,4 +172,19 @@ public class YoutubeHomePageUserSteps {
         }
         return false;
     }
+
+    public boolean videoComponentInformation(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        return homePageMainAreaPageObject.videoComponentInformation();
+    }
+
+    public void clickOnFirstVideoThumbnail(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        homePageMainAreaPageObject.clickOnFirstVideoThumbnail();
+    }
+
+    public void clickOnFirstVideoTitle(){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        homePageMainAreaPageObject.clickOnFirstVideoTitle();
+    }
 }
