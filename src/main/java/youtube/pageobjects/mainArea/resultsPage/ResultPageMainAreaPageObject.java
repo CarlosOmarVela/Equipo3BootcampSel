@@ -1,13 +1,11 @@
 package youtube.pageobjects.mainArea.resultsPage;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class ResultPageMainAreaPageObject extends BasePageObject {
@@ -28,7 +26,7 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
     private List<WebElement> dateRelease;
 
     @FindBy(how = How.XPATH, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']")
-    private List<WebElement> firstVideoInHomePage;
+    private WebElement firstVideoInHomePage;
 
     Boolean display;
 
@@ -50,5 +48,9 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
     }
     public List<WebElement> getDateRelease(){
         return dateRelease;
+    }
+
+    public void clickOnFirstVideo(){
+        this.firstVideoInHomePage.click();
     }
 }
