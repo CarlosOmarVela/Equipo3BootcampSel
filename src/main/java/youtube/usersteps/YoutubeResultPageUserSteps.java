@@ -43,4 +43,8 @@ public class YoutubeResultPageUserSteps {
     public void enterFirstVideo(){
         this.resultPageMainAreaPageObject.clickOnFirstVideo();
     }
+
+    public boolean validateSearchStringInResults(String searchString){
+        return resultPageMainAreaPageObject.searchStringInLoadedVideos(searchString);
+    }
 }

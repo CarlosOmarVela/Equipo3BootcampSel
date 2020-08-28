@@ -1,6 +1,7 @@
 package youtube.pageobjects.mainArea.homePage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,9 @@ public class HomePageMainAreaPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "(//div[@id='contents'])[1]/ytd-rich-item-renderer")
     private WebElement firstVideoInHomePage;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='search']")
+    private WebElement searchBox;
 
     public HomePageMainAreaPageObject(WebDriver driver, String baseURL) {
         super(driver, baseURL);
@@ -95,5 +99,14 @@ public class HomePageMainAreaPageObject extends BasePageObject {
     public void clickOnFirstVideoTitle(){
         WebElement videoTitle = firstVideoInHomePage.findElement(By.xpath("//a[@id='video-title-link']"));
         videoTitle.click();
+    }
+
+    public void enterTextInSearchBox(String searchString){
+        searchBox.clear();
+        searchBox.sendKeys(searchString);
+    }
+
+    public void pressEnterInSearchBox(){
+        searchBox.sendKeys(Keys.ENTER);
     }
 }

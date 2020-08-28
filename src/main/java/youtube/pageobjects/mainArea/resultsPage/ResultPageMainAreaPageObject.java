@@ -1,11 +1,13 @@
 package youtube.pageobjects.mainArea.resultsPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import youtube.pageobjects.BasePageObject;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class ResultPageMainAreaPageObject extends BasePageObject {
@@ -27,6 +29,9 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
 
     @FindBy(how = How.XPATH, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']")
     private WebElement firstVideoInHomePage;
+
+    @FindBy(how = How.XPATH, using = "//div[@id='contents']//ytd-video-renderer")
+    private List<WebElement> videosInResultPage;
 
     Boolean display;
 
@@ -52,5 +57,19 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
 
     public void clickOnFirstVideo(){
         this.firstVideoInHomePage.click();
+    }
+
+    public boolean searchStringInLoadedVideos(String searchString){
+        Iterator iter = videosInResultPage.iterator();
+        while (iter.hasNext()){
+            WebElement temp = (WebElement) iter.next();
+            if(temp.isDisplayed()){
+                String videoTitle = temp.findElement(By.xpath("//a[@id='video-title']")).getAttribute("title");
+                if(videoTitle.contains(searchString) != true){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

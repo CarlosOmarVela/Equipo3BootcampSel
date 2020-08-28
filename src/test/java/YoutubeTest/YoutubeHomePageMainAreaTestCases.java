@@ -11,16 +11,19 @@ import utils.PropertyReader;
 import utils.listeners.TestListener;
 import youtube.usersteps.YoutubeHomePageUserSteps;
 import youtube.usersteps.YoutubeChannelPageUserSteps;
+import youtube.usersteps.YoutubeResultPageUserSteps;
 
 @Listeners({ TestListener.class})
 public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     private YoutubeHomePageUserSteps youtubeHomePageUserSteps;
     private YoutubeChannelPageUserSteps youtubeChannelPageUserSteps;
+    private YoutubeResultPageUserSteps youtubeResultPageUserSteps;
 
     @BeforeClass
     public void beforeClass(){
         this.youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(this.myDriver);
         this.youtubeChannelPageUserSteps = new YoutubeChannelPageUserSteps(this.myDriver);
+        this.youtubeResultPageUserSteps = new YoutubeResultPageUserSteps(this.myDriver);
     }
 
     @BeforeMethod
@@ -66,6 +69,10 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     // Searching Scenario
     @Test
     public void validateSearchedStringInResults(){
+        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
+        Assert.assertTrue(youtubeResultPageUserSteps.validateSearchStringInResults(PropertyReader.getProperty("test.properties","SEARCH_VIDEO")),"Search String not found in one video");
+
     }
 
     @Test

@@ -210,4 +210,10 @@ public class YoutubeHomePageUserSteps extends YoutubeResultPageUserSteps{
         HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
         homePageMainAreaPageObject.clickOnFirstVideoTitle();
     }
+
+    public void searchVideo(String searchString){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        homePageMainAreaPageObject.enterTextInSearchBox(searchString);
+        homePageMainAreaPageObject.pressEnterInSearchBox();
+    }
 }
