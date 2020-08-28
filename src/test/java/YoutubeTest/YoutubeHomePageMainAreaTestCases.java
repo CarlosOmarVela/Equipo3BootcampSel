@@ -76,13 +76,16 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
-    public void validateSearchResultsVideoComponentInformation(){}
+    public void validateSearchResultsVideoComponentInformation(){
+        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        Assert.assertEquals(youtubeResultPageUserSteps.validateAllVideosComponentInformation(),true,"La informacion de los componentes de video esta incompleta");
+    }
 
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void validateClickOnSearchResultsVideo(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
         youtubeHomePageUserSteps.searchTextEnter(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
-        Assert.assertEquals(this.myDriver.getCurrentUrl(),"https://www.youtube.com/watch?v=mf-UJ32PJgU");
+        Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
     }
 }

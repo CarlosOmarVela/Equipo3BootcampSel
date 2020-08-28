@@ -47,4 +47,8 @@ public class YoutubeResultPageUserSteps {
     public boolean validateSearchStringInResults(String searchString){
         return resultPageMainAreaPageObject.searchStringInLoadedVideos(searchString);
     }
+
+    public boolean validateAllVideosComponentInformation(){
+        return resultPageMainAreaPageObject.validateAllVideosComponentInformation();
+    }
 }

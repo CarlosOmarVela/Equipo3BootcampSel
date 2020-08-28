@@ -30,7 +30,7 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']")
     private WebElement firstVideoInHomePage;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='contents']//ytd-video-renderer")
+    @FindBy(how = How.XPATH, using = "//ytd-search//div[@id='contents'][position()=1]//ytd-video-renderer")
     private List<WebElement> videosInResultPage;
 
     Boolean display;
@@ -66,6 +66,27 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
             if(temp.isDisplayed()){
                 String videoTitle = temp.findElement(By.xpath("//a[@id='video-title']")).getAttribute("title");
                 if(videoTitle.contains(searchString) != true){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean validateAllVideosComponentInformation(){
+        Iterator iter = videosInResultPage.iterator();
+        while (iter.hasNext()){
+            WebElement temp = (WebElement) iter.next();
+            if(temp.isDisplayed() && temp.isEnabled()){
+                String videoTitle = temp.findElement(By.xpath("//a[@id='video-title-link']")).getAttribute("title");
+                String author = temp.findElement(By.xpath("//a[@id='avatar-link']")).getAttribute("title");
+                String viewsCount = temp.findElement(By.xpath("//div[@id='metadata-line']/span")).getText();
+                WebElement videoThumbnail = temp.findElement(By.xpath("//a[@id='thumbnail']"));
+                if (videoTitle.isEmpty() || author.isEmpty() || viewsCount.isEmpty() || videoThumbnail == null){
+                    System.out.println(videoTitle);
+                    System.out.println(author);
+                    System.out.println(viewsCount);
+                    System.out.println(videoThumbnail.getAttribute("href"));
                     return false;
                 }
             }
