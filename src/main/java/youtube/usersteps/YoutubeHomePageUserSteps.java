@@ -8,14 +8,13 @@ import youtube.pageobjects.leftMenuArea.*;
 import youtube.pageobjects.mainArea.homePage.HomePageMainAreaPageObject;
 import youtube.pageobjects.mainArea.resultsPage.ResultPageMainAreaPageObject;
 
-public class YoutubeHomePageUserSteps extends YoutubeResultPageUserSteps{
+public class YoutubeHomePageUserSteps {
     private YoutubeHomePage youtubeHomePage;
     private YoutubeResultPage youtubeResultPage;
     private WebDriver driver;
 
 
     public YoutubeHomePageUserSteps(WebDriver driver){
-        super();
         this.driver = driver;
         this.youtubeHomePage = new YoutubeHomePage(driver);
         this.youtubeResultPage = new YoutubeResultPage(driver);
@@ -72,7 +71,7 @@ public class YoutubeHomePageUserSteps extends YoutubeResultPageUserSteps{
     public void searchTextEnter(String video){
         SearchPageObject searchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
         searchPageObject.enterSearchField(video);
-        youtubeResultPage.getYoutubeResultPageMainAreaComponent().clickOnFirstVideo();
+        //youtubeResultPage.getYoutubeResultPageMainAreaComponent().clickOnFirstVideo();
     }
 
     public void create(){

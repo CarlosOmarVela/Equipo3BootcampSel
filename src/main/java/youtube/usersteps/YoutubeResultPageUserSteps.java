@@ -10,13 +10,11 @@ import java.util.List;
 
 public class YoutubeResultPageUserSteps {
     private ResultPageMainAreaPageObject resultPageMainAreaPageObject;
+    private YoutubeResultPage youtubeResultPage;
 
     public YoutubeResultPageUserSteps(WebDriver driver){
         this.resultPageMainAreaPageObject = new ResultPageMainAreaPageObject(driver, driver.getCurrentUrl());
-    }
-
-    public YoutubeResultPageUserSteps() {
-
+        this.youtubeResultPage = new YoutubeResultPage(driver);
     }
 
     public List<WebElement> getResultsSubList(){
@@ -49,6 +47,7 @@ public class YoutubeResultPageUserSteps {
     }
 
     public boolean validateAllVideosComponentInformation(){
+        ResultPageMainAreaPageObject resultPageMainAreaPageObject = this.youtubeResultPage.getResultPageMainAreaComponent().getResultPageMainAreaPageObject();
         return resultPageMainAreaPageObject.validateAllVideosComponentInformation();
     }
 }

@@ -12,7 +12,5 @@ public class YoutubeChannelPage extends YoutubeBasePage{
         this.youtubeChannelPageMainAreaComponent = new YoutubeChannelPageMainAreaComponent(driver);
     }
 
-    public YoutubeChannelPageMainAreaComponent getYoutubeChannelPageMainAreaComponent() {
-        return youtubeChannelPageMainAreaComponent;
-    }
+    public YoutubeChannelPageMainAreaComponent getYoutubeChannelPageMainAreaComponent() { return youtubeChannelPageMainAreaComponent; }
 }

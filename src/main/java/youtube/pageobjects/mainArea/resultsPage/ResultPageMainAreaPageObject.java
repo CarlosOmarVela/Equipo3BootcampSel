@@ -77,7 +77,7 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
         Iterator iter = videosInResultPage.iterator();
         while (iter.hasNext()){
             WebElement temp = (WebElement) iter.next();
-            if(temp.isDisplayed() && temp.isEnabled()){
+            if(temp.isDisplayed()){
                 String videoTitle = temp.findElement(By.xpath("//a[@id='video-title-link']")).getAttribute("title");
                 String author = temp.findElement(By.xpath("//a[@id='avatar-link']")).getAttribute("title");
                 String viewsCount = temp.findElement(By.xpath("//div[@id='metadata-line']/span")).getText();

@@ -85,7 +85,7 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     @Test
     public void validateClickOnSearchResultsVideo(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
-        youtubeHomePageUserSteps.searchTextEnter(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
     }
 }
