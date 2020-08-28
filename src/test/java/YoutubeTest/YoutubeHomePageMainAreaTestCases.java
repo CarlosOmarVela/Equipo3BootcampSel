@@ -72,7 +72,15 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
         youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
         Assert.assertTrue(youtubeResultPageUserSteps.validateSearchStringInResults(PropertyReader.getProperty("test.properties","SEARCH_VIDEO")),"Search String not found in one video");
+    }
 
+    @Test
+    public void validateSearchedWithoutInResults(){
+        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_WITHOUT_RESULT"));
+        Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
+        Assert.assertEquals(youtubeResultPageUserSteps.validateSearchWithoutResults(PropertyReader.getProperty("test.properties","SEARCH_WITHOUT_RESULT")),
+                youtubeResultPageUserSteps.validateSearchWithoutResults(PropertyReader.getProperty("test.properties","BAD_SEARCH")),
+                "Found a video");
     }
 
     @Test

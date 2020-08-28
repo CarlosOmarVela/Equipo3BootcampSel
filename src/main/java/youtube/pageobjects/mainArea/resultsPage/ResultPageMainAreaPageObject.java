@@ -73,6 +73,20 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
         return true;
     }
 
+    public boolean searchStringWithoutVideos(String searchString){
+        Iterator iter = videosInResultPage.iterator();
+        while (iter.hasNext()){
+            WebElement temp = (WebElement) iter.next();
+            if(temp.isDisplayed()){
+                String videoTitle = temp.findElement(By.xpath("//*[@id='contents']/ytd-background-promo-renderer/div[1]/div[1]")).getText();
+                if(videoTitle.contains(searchString) != true){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public boolean validateAllVideosComponentInformation(){
         Iterator iter = videosInResultPage.iterator();
         while (iter.hasNext()){

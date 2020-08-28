@@ -46,6 +46,10 @@ public class YoutubeResultPageUserSteps {
         return resultPageMainAreaPageObject.searchStringInLoadedVideos(searchString);
     }
 
+    public boolean validateSearchWithoutResults(String searchString){
+        return resultPageMainAreaPageObject.searchStringWithoutVideos(searchString);
+    }
+
     public boolean validateAllVideosComponentInformation(){
         ResultPageMainAreaPageObject resultPageMainAreaPageObject = this.youtubeResultPage.getResultPageMainAreaComponent().getResultPageMainAreaPageObject();
         return resultPageMainAreaPageObject.validateAllVideosComponentInformation();
