@@ -1,8 +1,7 @@
 package YoutubeTest;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -13,7 +12,6 @@ import utils.listeners.TestListener;
 import youtube.usersteps.YoutubeHomePageUserSteps;
 import youtube.usersteps.YoutubeResultPageUserSteps;
 
-import java.util.List;
 
 @Listeners({ TestListener.class})
 public class YoutubeResultSearchTestCases extends BaseTestCase{
@@ -29,8 +27,9 @@ public class YoutubeResultSearchTestCases extends BaseTestCase{
         this.myDriver.get(PropertyReader.getProperty("test.properties","URL"));
     }
 
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
-    public void validateResultPage() throws InterruptedException {
+    public void validateResultPage(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
         YoutubeResultPageUserSteps youtubeResultPageUserSteps = youtubeHomePageUserSteps.searchAProduct(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         SoftAssert softAssert = new SoftAssert();
