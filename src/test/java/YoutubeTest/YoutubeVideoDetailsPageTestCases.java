@@ -121,6 +121,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if setting button is pressent")
+    @Step("Check if setting button is pressent")
     public void validateSettingsButtonIsPresent(){
         //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
         Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"The setting button isn't present");
@@ -129,6 +130,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if mini player button is pressent")
+    @Step("Check if mini player button is pressent")
     public void validateMiniPlayerButtonIsPresent(){
         //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
         Assert.assertTrue(youtubeVideoPageUserSteps.miniPlayerButtonIsPresent(),"The mini player button isn't present");
@@ -137,6 +139,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if size button is present")
+    @Step("Check if size button is present")
     public void validateSizeButtonIsPresent(){
         //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
         Assert.assertTrue(youtubeVideoPageUserSteps.sizeButtonIsPresent(),"The size button isn't present");
@@ -145,6 +148,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if full screen button is present")
+    @Step("Check if full screen button is present")
     public void validateFullScreenButtonIsPresent(){
         //Assert.assertFalse(youtubeVideoPageUserSteps.commentsIsPresent(),"The comments area isn't present");
         Assert.assertTrue(youtubeVideoPageUserSteps.fullScreenButtonIsPresent(),"The full screen isn't present");
@@ -153,6 +157,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Play and pause video")
+    @Step("Play and pause video")
     public void playAndPauseVideo() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.playButtonIsPresent(),"The play button isn't present");
         youtubeVideoPageUserSteps.clickOnPlayButton();
@@ -165,6 +170,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Click on next video button")
+    @Step("Click on next video button")
     public void changeToTheNextVideo() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.nextVideoButtonIsPresent(), "The NEXT button isn't present");
         //this class press many times the button NEXT VIDEO, "time" parameter define the time between the button NEXT VIDEO is presed
@@ -175,6 +181,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Get video duration video")
+    @Step("Get video duration video")
     public void getAndPrintVideoDurationLabel(){
         Assert.assertTrue(youtubeVideoPageUserSteps.videoDurationLabelIsPresent(),"The label of video isn't pressent");
         System.out.println("The current video duration is: " + youtubeVideoPageUserSteps.getVideoDuration());
@@ -183,6 +190,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Enable Sub titles")
+    @Step("Enable Sub titles")
     public void enableVideoSubTitles () throws InterruptedException{
         Assert.assertTrue(youtubeVideoPageUserSteps.enableSubtitlesIsPresent(), "The sub titles button isn't present");
         youtubeVideoPageUserSteps.enablieSubTitles();
@@ -192,6 +200,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Click on options button")
+    @Step("Click on options button")
     public void clicOnOptionsButton() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"");
         youtubeVideoPageUserSteps.clickOptionsButton();
@@ -201,6 +210,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("Mini playback video")
+    @Step("Mini playback video")
     public void convertToMiniPayBacktheCurrentVideo() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.miniPlayerButtonIsPresent(),"The mini player button isn't pressent");
         Thread.sleep(1500);
@@ -211,6 +221,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Full Screen video")
+    @Step("Full Screen video")
     public void fullScreenPlayBackVideo() throws InterruptedException{
         Assert.assertTrue(youtubeVideoPageUserSteps.fullScreenButtonIsPresent(),"The full screen button isn't pressent");
         Thread.sleep(1500);
@@ -223,6 +234,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("Cheange video to cinema mode")
+    @Step("Cheange video to cinema mode")
     public void CinemaModePlayback() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.sizeButtonIsPresent(),"The cinema mode button isn't present");
         Thread.sleep(1500);
@@ -235,6 +247,7 @@ public class YoutubeVideoDetailsPageTestCases extends BaseTestCase {
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("View playback fast")
+    @Step("View playback fast")
     public void fastPlaybackVideo() throws InterruptedException {
         Assert.assertTrue(youtubeVideoPageUserSteps.settingsButtonIsPresent(),"The settings button isn't present");
         youtubeVideoPageUserSteps.maximizePlayBackVideo();
