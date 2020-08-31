@@ -1,5 +1,6 @@
 package YoutubeTest;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +29,8 @@ public class YoutubeResultSearchTestCases extends BaseTestCase{
     }
 
     @Severity(SeverityLevel.CRITICAL)
-    @Test(priority = 1)
+    @Description("Check if there are all the body of the video list")
+    @Test
     public void validateResultPage(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
         YoutubeResultPageUserSteps youtubeResultPageUserSteps = youtubeHomePageUserSteps.searchAProduct(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
