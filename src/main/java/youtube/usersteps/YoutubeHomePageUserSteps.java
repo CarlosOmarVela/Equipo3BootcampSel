@@ -71,7 +71,8 @@ public class YoutubeHomePageUserSteps {
     public void searchTextEnter(String video){
         SearchPageObject searchPageObject = this.youtubeHomePage.getYoutubeHeaderComponent().getYoutubeSearchPageObject();
         searchPageObject.enterSearchField(video);
-        //youtubeResultPage.getYoutubeResultPageMainAreaComponent().clickOnFirstVideo();
+        ResultPageMainAreaPageObject resultPageMainAreaPageObject = this.youtubeResultPage.getResultPageMainAreaComponent().getResultPageMainAreaPageObject();
+        resultPageMainAreaPageObject.clickOnFirstVideo();
     }
 
     public void create(){
@@ -214,5 +215,12 @@ public class YoutubeHomePageUserSteps {
         HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
         homePageMainAreaPageObject.enterTextInSearchBox(searchString);
         homePageMainAreaPageObject.pressEnterInSearchBox();
+    }
+    public boolean searchVideoAndValidateResults(String searchString){
+        HomePageMainAreaPageObject homePageMainAreaPageObject = this.youtubeHomePage.getYoutubeHomePageMainAreaComponent().getHomePageMainAreaPageObject();
+        homePageMainAreaPageObject.enterTextInSearchBox(searchString);
+        homePageMainAreaPageObject.pressEnterInSearchBox();
+        ResultPageMainAreaPageObject resultPageMainAreaPageObject = this.youtubeResultPage.getResultPageMainAreaComponent().getResultPageMainAreaPageObject();
+        return resultPageMainAreaPageObject.validateAllVideosComponentInformation();
     }
 }

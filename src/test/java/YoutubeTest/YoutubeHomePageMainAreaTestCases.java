@@ -37,6 +37,7 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateNewsSection(){
         youtubeHomePageUserSteps.clickOnLeftMenuNewsButton();
         Assert.assertEquals(youtubeChannelPageUserSteps.nameOfChannel(),"News");
@@ -44,23 +45,27 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateTrendingSection(){
         Assert.assertEquals(youtubeHomePageUserSteps.enoughVideosInTrendingSection(),true,"La seccion de Trending tiene menos de 5 videos");
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateVideoComponentInformation(){
         youtubeHomePageUserSteps.videoComponentInformation();
         Assert.assertEquals(youtubeHomePageUserSteps.videoComponentInformation(),true,"La informacion del componente de video esta incompleta");
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateClickOnVideoThumbnail(){
         youtubeHomePageUserSteps.clickOnFirstVideoThumbnail();
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo click en el thumbnail");
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateClickOnVideoTitle(){
         youtubeHomePageUserSteps.clickOnFirstVideoTitle();
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo click en el Titulo del video");
@@ -68,6 +73,7 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
 
     // Searching Scenario
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateSearchedStringInResults(){
         youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
@@ -75,6 +81,7 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateSearchedWithoutInResults(){
         youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_WITHOUT_RESULT"));
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
@@ -84,16 +91,16 @@ public class YoutubeHomePageMainAreaTestCases extends BaseTestCase {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     public void validateSearchResultsVideoComponentInformation(){
-        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
-        Assert.assertEquals(youtubeResultPageUserSteps.validateAllVideosComponentInformation(),true,"La informacion de los componentes de video esta incompleta");
+        Assert.assertEquals(youtubeHomePageUserSteps.searchVideoAndValidateResults(PropertyReader.getProperty("test.properties","SEARCH_VIDEO")),true,"La informacion de los componentes de video esta incompleta");
     }
 
-    @Severity(SeverityLevel.CRITICAL)
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     public void validateClickOnSearchResultsVideo(){
         youtubeHomePageUserSteps = new YoutubeHomePageUserSteps(myDriver);
-        youtubeHomePageUserSteps.searchVideo(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
+        youtubeHomePageUserSteps.searchTextEnter(PropertyReader.getProperty("test.properties","SEARCH_VIDEO"));
         Assert.assertFalse(this.myDriver.getCurrentUrl().equals(PropertyReader.getProperty("test.properties","URL")),"No se realizo la busqueda del video");
     }
 }

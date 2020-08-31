@@ -27,10 +27,10 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
     @FindBy(how = How.XPATH, using = "//*[@id='metadata-line']/span[2]")
     private List<WebElement> dateRelease;
 
-    @FindBy(how = How.XPATH, using = "//ytd-video-renderer[@class='style-scope ytd-item-section-renderer']")
+    @FindBy(how = How.XPATH, using = "//ytd-search[@role='main']//div[@id='contents'][position()=1]//ytd-video-renderer")
     private WebElement firstVideoInHomePage;
 
-    @FindBy(how = How.XPATH, using = "//ytd-search//div[@id='contents'][position()=1]//ytd-video-renderer")
+    @FindBy(how = How.XPATH, using = "//ytd-search[@role='main']//div[@id='contents'][position()=1]//ytd-video-renderer")
     private List<WebElement> videosInResultPage;
 
     Boolean display;
@@ -96,7 +96,7 @@ public class ResultPageMainAreaPageObject extends BasePageObject {
                 String author = temp.findElement(By.xpath("//a[@id='avatar-link']")).getAttribute("title");
                 String viewsCount = temp.findElement(By.xpath("//div[@id='metadata-line']/span")).getText();
                 WebElement videoThumbnail = temp.findElement(By.xpath("//a[@id='thumbnail']"));
-                if (videoTitle.isEmpty() || author.isEmpty() || viewsCount.isEmpty() || videoThumbnail == null){
+                if (videoTitle.isEmpty() || author.isEmpty() || videoThumbnail == null){
                     System.out.println(videoTitle);
                     System.out.println(author);
                     System.out.println(viewsCount);
